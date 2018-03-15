@@ -1,0 +1,95 @@
+commit bf1af2006f5f7b96c2558521b8f961d5e279a10d
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Fri Mar 16 00:02:56 2018 +0200
+
+    muutoksia tehty
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 4d39b36fa6bf2d1325fa6e65b51307344d6e163c
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 23:58:24 2018 +0200
+
+    filet tehty
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1043e58587e837dd52a395db61c6a1327390b5ec
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 14:18:48 2018 +0200
+
+    add -p harjoittelua
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 90fd404c347ea51009668f2a12c244f535367877
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 14:11:52 2018 +0200
+
+    rename
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4b306d70598fb11afa9e3c37b8401eaf29cd9129
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 14:09:28 2018 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 20890035d2fd8080f41945552252c160b89add13
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 14:00:10 2018 +0200
+
+    stuff hakemisto
+
+ stuff/jotain.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 89aabd75a944cdc7881c50fab71fcf577048bf14
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 13:58:15 2018 +0200
+
+    muokkauksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 81757bee8bd609adea5f854eac8da947f215379a
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 13:57:14 2018 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4225d5d763e20402414c36ebd8d46a38b2d056ee
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 13:53:57 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit c9c86ed63e03b1dbfd24d4dc1ee28f0bd3d61f32
+Author: Mikko Leinonen <mikko.leinonen91@gmail.com>
+Date:   Thu Mar 15 13:47:12 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
