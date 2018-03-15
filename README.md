@@ -1,3 +1,7 @@
-**OTM**
+#**OTM-harjoitustyö**
 
-Nämä tiedostot on tehty *kurssille* **Ohjelmistotekniikan menetelmät**
+##Tehtävät
+
+###Viikko1
+[komentorivi.txt](https://github.com/mikkolei/otm-harjoitustyo/blob/master/viikko1/komentorivi.txt)
+[gitlog.txt](https://github.com/mikkolei/otm-harjoitustyo/blob/master/viikko1/gitlog.txt)
