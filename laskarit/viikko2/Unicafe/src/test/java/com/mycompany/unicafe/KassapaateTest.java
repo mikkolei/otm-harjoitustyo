@@ -141,17 +141,5 @@ public class KassapaateTest {
         assertEquals(1000, kortti.saldo());
         assertEquals(100000, paate.kassassaRahaa());
     }
-//    @BeforeClass
-//    public static void setUpClass() {
-//    }
-//    
-//    @AfterClass
-//    public static void tearDownClass() {
-//    }
-//    
-//    
-//    @After
-//    public void tearDown() {
-//    }
 
 }
