@@ -12,7 +12,7 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli eli *normaali* käytt�
 
 ### Ennen kirjautumista
 * Käyttäjä voi luoda käyttäjätunnuksen järjestelmään 
-  * Käyttäjätunnuksien tulee olla uniikkeja ja olla vähintään 3 merkkiä pitkiä
+  * Käyttäjätunnuksien tulee olla uniikkeja ja vähintään 3 merkkiä pitkiä
   * Käyttäjä asettaa salasanan käyttäjätunnukselle luomisen yhteydessä
 
 * Käyttäjä voi kirjautua järjestelmään
