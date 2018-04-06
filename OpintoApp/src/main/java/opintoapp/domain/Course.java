@@ -20,9 +20,9 @@ public class Course {
         return name;
     }
 
-    public int getCredit() {
-        return credit;
-    }
+//    public int getCredit() {
+//        return credit;
+//    }
 
     public boolean isDone() {
         return done;
