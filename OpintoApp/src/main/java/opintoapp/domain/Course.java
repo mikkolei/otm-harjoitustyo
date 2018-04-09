@@ -6,23 +6,30 @@ public class Course {
     private String name;
     private int credit;
     private boolean done;
-    private int grade;
+    private String grade;
     private User user;
 
-    public Course(String name, int credit, boolean done, User user) {
+    public Course(String name, int credit, boolean done, String grade, User user) {
         this.name = name;
         this.credit = credit;
         this.done = done;
         this.user = user;
+    }
+    
+    public Course(String name, int credit, User user) {
+        this.name = name;
+        this.credit = credit;
+        this.user = user;
+        this.done = false;
     }
 
     public String getName() {
         return name;
     }
 
-//    public int getCredit() {
-//        return credit;
-//    }
+    public int getCredit() {
+        return credit;
+    }
 
     public boolean isDone() {
         return done;

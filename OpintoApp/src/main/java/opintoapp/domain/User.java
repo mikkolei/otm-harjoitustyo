@@ -1,16 +1,21 @@
 
 package opintoapp.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     
     private String name;
     private String username;
     private String password;
+    private List<Course> courses;
 
     public User(String name, String username, String password) {
         this.name = name;
         this.username = username;
         this.password = password;
+        courses = new ArrayList<>();
     }
 
     public String getName() {
@@ -35,6 +40,16 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof User)) {
+            return false;
+        }
+        
+        User other = (User) object;
+        return username.equals(other.username);
     }
     
 }
