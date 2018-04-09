@@ -2,24 +2,22 @@
 package opintoapp.dao;
 
 import java.util.List;
-import opintoapp.domain.User;
+import opintoapp.domain.Course;
 
-public class SQLUserDao implements UserDao {
-    
-    
+public class SQLCourseDao implements CourseDao {
 
     @Override
-    public User create(User user) throws Exception {
+    public Course create(Course course) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User findByName(String username) {
+    public List<Course> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<User> getAll() {
+    public void setDone(String name) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

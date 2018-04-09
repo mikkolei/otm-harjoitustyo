@@ -42,6 +42,10 @@ public class User {
         this.password = password;
     }
     
+    public List<Course> getCourses(User user) {
+        return user.courses;
+    }
+    
     @Override
     public boolean equals(Object object) {
         if (!(object instanceof User)) {

@@ -16,5 +16,11 @@ public class UserTest {
         User u2 = new User("mikko", "tester", "test");
         assertTrue(u1.equals(u2));
     }
-
+    
+    @Test
+    public void settingUsername() {
+        User u1 = new User("test", "tester", "test");
+        u1.setUsername("username");
+        assertEquals("username", u1.getUsername());
+    }
 }
