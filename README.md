@@ -14,8 +14,11 @@
 
 ## Viikko3
 [Monopoli 1. osa](https://github.com/mikkolei/otm-harjoitustyo/blob/master/laskarit/viikko3/1.png)
+
 [Monopoli 2. osa](https://github.com/mikkolei/otm-harjoitustyo/blob/master/laskarit/viikko3/2.png)
+
 [Machine](https://github.com/mikkolei/otm-harjoitustyo/blob/master/laskarit/viikko3/3.png)
+
 [HSL](https://github.com/mikkolei/otm-harjoitustyo/blob/master/laskarit/viikko3/4.png)
 
 ## *OpintoApp*
