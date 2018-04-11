@@ -61,6 +61,22 @@ public class SQLUserDao implements UserDao {
 
         return user;
     }
+    
+    @Override
+    public User findByUsername(String username) throws SQLException {
+        Connection conn = db.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM User WHERE username = ?");
+        stmt.setString(1, username);
+        
+        ResultSet rs = stmt.executeQuery();
+        if(!rs.next()) {
+            return null;
+        }
+        User user = new User(rs.getString("name"), rs.getString("username"), rs.getString("password"));
+        stmt.close();
+        conn.close();
+        return user;
+    }
 
     @Override
     public List<User> getAll() {

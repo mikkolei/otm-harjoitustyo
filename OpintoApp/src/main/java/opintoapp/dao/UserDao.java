@@ -11,6 +11,8 @@ public interface UserDao {
     
     User findByUsernameAndPassword(String username, String password) throws SQLException;
     
+    User findByUsername(String username) throws SQLException;
+    
     List<User> getAll();
     
 }

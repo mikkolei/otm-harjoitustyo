@@ -141,7 +141,7 @@ public class Main extends Application {
                 String name = newNameField.getText();
                 String password = newPasswordField.getText();
                 
-                if(username.length() <= 2 || name.length() <= 2 || username.length() > 50 || name.length() > 50 || password.length() > 50) {
+                if(username.length() <= 2 || name.length() <= 2 || password.length() <= 2 || username.length() > 50 || name.length() > 50 || password.length() > 50) {
                     newUserCreationMessage.setText("username, name and password must be 3-50 characters long");
                 } else if (studyService.createUser(name, username, password)) {
                     newUserCreationMessage.setText("");

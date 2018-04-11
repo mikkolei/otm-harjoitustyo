@@ -30,7 +30,7 @@ public class StudyService {
     }
     
     public boolean createUser(String name, String username, String password) throws SQLException {
-        if(userDao.findByUsernameAndPassword(username, password) != null) {
+        if(userDao.findByUsername(username) != null) {
             return false;
         }
         User user = new User(name, username, password);
