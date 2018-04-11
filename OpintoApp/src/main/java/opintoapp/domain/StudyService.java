@@ -1,6 +1,7 @@
 
 package opintoapp.domain;
 
+import java.sql.SQLException;
 import opintoapp.dao.*;
 
 public class StudyService {
@@ -20,13 +21,16 @@ public class StudyService {
         return false;
     }
     
-    public boolean login(String username, String password) {
-//        User user = userDao.findByUsername(username);
-          return false;
+    public boolean login(String username, String password) throws SQLException {
+        User user = userDao.findByUsernameAndPassword(username, password);
+        if (user == null)
+            return false;
+        loggedIn = user;
+        return true;
     }
     
-    public boolean createUser(String name, String username, String password) {
-        if(userDao.findByName(username) != null) {
+    public boolean createUser(String name, String username, String password) throws SQLException {
+        if(userDao.findByUsernameAndPassword(username, password) != null) {
             return false;
         }
         User user = new User(name, username, password);

@@ -1,6 +1,9 @@
 
 package opintoapp.ui;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -21,6 +24,7 @@ public class Main extends Application {
     private StudyService studyService;
     private Scene loginScene;
     private Scene newUserScene;
+    private Scene studyScene;
     private Label menuLabel = new Label();
     
     public static void main(String[] args) {
@@ -32,7 +36,7 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         this.db = new Database("jdbc:sqlite:opintoApp.db");
-        SQLUserDao sqlUserDao = new SQLUserDao();
+        SQLUserDao sqlUserDao = new SQLUserDao(db);
         SQLCourseDao sqlCourseDao = new SQLCourseDao();
         this.studyService = new StudyService(sqlUserDao, sqlCourseDao);
     }
@@ -53,12 +57,12 @@ public class Main extends Application {
         loginPane.setPadding(new Insets(10));
         
         Label loginLabel = new Label("username");
-        TextField usernameInput = new TextField();
-        inputPane.getChildren().addAll(loginLabel, usernameInput);
+        TextField usernameField = new TextField();
+        inputPane.getChildren().addAll(loginLabel, usernameField);
         
         Label passwordLabel = new Label("password");
-        PasswordField userPassword = new PasswordField();
-        passwordPane.getChildren().addAll(passwordLabel, userPassword);
+        PasswordField userPasswordField = new PasswordField();
+        passwordPane.getChildren().addAll(passwordLabel, userPasswordField);
         
 
         Label loginMessage = new Label();
@@ -67,18 +71,28 @@ public class Main extends Application {
         Button createUserButton = new Button("create new user");
         
         loginButton.setOnAction(e -> {
-            String username = usernameInput.getText();
-            String password = userPassword.getText();
+            String username = usernameField.getText();
+            String password = userPasswordField.getText();
             menuLabel.setText(username + " logged in.");
-            if(studyService.login(username, username)) {
-                loginMessage.setText("");
-                primaryStage.setScene(newUserScene);
-                // missing features yet
+            try {
+                if(studyService.login(username, password)) {
+                    loginMessage.setText("");
+                    primaryStage.setScene(studyScene);
+                    usernameField.setText("");
+                    userPasswordField.setText("");
+//                    redrawcourse list
+                    
+                } else {
+                    loginMessage.setText("user does not exist");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         });
         
         createUserButton.setOnAction(e -> {
-            usernameInput.setText("");
+            usernameField.setText("");
             primaryStage.setScene(newUserScene);
         });
         loginPane.getChildren().addAll(loginMessage, inputPane, passwordPane, loginButton, createUserButton);
@@ -122,10 +136,24 @@ public class Main extends Application {
         });
         
         createNewUserButton.setOnAction(e->{
-            String username = newUsernameField.getText();
-            String name = newNameField.getText();
-            String password = newPasswordField.getText();
-            // features missing
+            try {
+                String username = newUsernameField.getText();
+                String name = newNameField.getText();
+                String password = newPasswordField.getText();
+                
+                if(username.length() <= 2 || name.length() <= 2 || username.length() > 50 || name.length() > 50 || password.length() > 50) {
+                    newUserCreationMessage.setText("username, name and password must be 3-50 characters long");
+                } else if (studyService.createUser(name, username, password)) {
+                    newUserCreationMessage.setText("");
+                    loginMessage.setText("new user created");
+                    primaryStage.setScene(loginScene);
+                } else {
+                    newUserCreationMessage.setText("username must be unique");
+                }
+                // features missing
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
         
         newUserPane.getChildren().addAll(newUserCreationMessage, newUsernamePane, newNamePane, newPasswordPane, createNewUserButton, goBackButton);
