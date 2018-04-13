@@ -4,6 +4,8 @@
 
 Ohjelman rakenne noudattaa kolmitasoista kerrosarkkitehtuuria, koodin pakkausrakenne on seuraavanlainen:
 
+
+
 Pakkaus opintoapp.ui sisältää JavaFX:llä toteutetun käyttöliittymän, opintoapp.domain sisältää sovelluslogiikan ja opintoapp.dao sisältää tietojen pysyväistallennuksesta vastaavan koodin.
 
 ## Käyttöliittymä
