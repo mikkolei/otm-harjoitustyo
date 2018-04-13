@@ -7,4 +7,4 @@
 
 [Työaikakirjanpito](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
 
-[Arkkitehtuurikuvaus]()
+[Arkkitehtuurikuvaus](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
