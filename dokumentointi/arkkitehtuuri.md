@@ -4,7 +4,8 @@
 
 Ohjelman rakenne noudattaa kolmitasoista kerrosarkkitehtuuria, koodin pakkausrakenne on seuraavanlainen:
 
-
+![pakkausrakenne]
+(https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/Pakkausrakenne.png)
 
 Pakkaus opintoapp.ui sisältää JavaFX:llä toteutetun käyttöliittymän, opintoapp.domain sisältää sovelluslogiikan ja opintoapp.dao sisältää tietojen pysyväistallennuksesta vastaavan koodin.
 
@@ -22,6 +23,9 @@ Jokainen näistä näkymistä on toteutettu omana FXML-näkymänä. Näkymistä 
 
 Sovelluksen loogisen datamallin muodostavat luokat User ja Course, jotka kuvaavat käyttäjiä ja käyttäjien kursseja.
 
+![Luokkakaavio]
+(https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/luokkakaavio.png)
+
 Toiminnallisista kokonaisuuksista vastaa luokan StudyService ainoa olio. Luokka tarjoaa kaikille käyttöliittymän toiminnoille oman metodin. Näitä ovat esim.
 
 * boolean createUser
@@ -33,6 +37,8 @@ StudyService pääsee käsiksi käyttäjiin ja kursseihin tietojen tallennuksest
 
 StudyServicen ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:
 
+![luokka/pakkauskaavio]
+(https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/luokka_pakkauskaavio.png)
 ## Tietojen pysyväistalletus
 
 Pakkauksen opintoapp.dao luokat SQLUserDao ja SQLCourseDao huolehtivat tietojen tallentamisesta tietokantaan. Tietokanta on nimeltään opintoApp.db.
