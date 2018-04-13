@@ -1,0 +1,70 @@
+
+package opintoapp.ui;
+
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import opintoapp.domain.StudyService;
+
+public class LoginSceneController {
+    
+    private StudyService studyService;
+    private Main application;
+    
+    @FXML
+    private TextField username;
+    
+    @FXML
+    private PasswordField password;
+    
+    @FXML
+    private Label text;
+    
+    public void setApplication(Main application) {
+        this.application = application;
+    }
+    public void setStudyService(StudyService studyService) {
+        this.studyService = studyService;
+    }
+    
+    @FXML
+    private void handleLoginButton(ActionEvent event) {
+        try {
+                if(this.studyService.login(username.getText(), password.getText())) {
+                    text.setText("");
+                    username.setText("");
+                    password.setText("");
+                    this.application.setUserStudyScene();
+//                    redrawcourse list
+                    
+                } else {
+                    text.setText("user does not exist");
+                    text.setTextFill(Color.RED);
+                }
+            } catch (SQLException ex) {
+                
+            }
+    }
+    
+    @FXML
+    private void handleCreateNewUserButton(ActionEvent event) {
+        username.setText("");
+        password.setText("");
+        text.setText("");
+        this.application.setCreateNewUserScene();
+    }
+
+    
+
+    
+      
+    
+}

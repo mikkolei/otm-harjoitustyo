@@ -10,6 +10,13 @@ import static org.junit.Assert.*;
 
 public class UserTest {
     
+    private User u;
+    
+    @Before
+    public void setUp() {
+        this.u = new User("name", "username", "password");
+    }
+    
     @Test
     public void equalWhenSameUsername() {
         User u1 = new User("mikko", "tester", "test");
@@ -19,8 +26,22 @@ public class UserTest {
     
     @Test
     public void settingUsername() {
-        User u1 = new User("test", "tester", "test");
-        u1.setUsername("username");
-        assertEquals("username", u1.getUsername());
+        u.setUsername("username");
+        assertEquals("username", u.getUsername());
+    }
+    
+    @Test
+    public void getUsername() {
+        assertEquals("username", u.getUsername());
+    }
+    
+    @Test
+    public void getName() {
+        assertEquals("name", u.getName());
+    }
+    
+    @Test
+    public void getPassword() {
+        assertEquals("password", u.getPassword());
     }
 }
