@@ -4,21 +4,21 @@ package opintoapp.domain;
 public class Course {
     
     private String name;
-    private int credit;
+    private int credits;
     private boolean done;
     private String grade;
     private User user;
 
     public Course(String name, int credit, boolean done, String grade, User user) {
         this.name = name;
-        this.credit = credit;
+        this.credits = credit;
         this.done = done;
         this.user = user;
     }
     
     public Course(String name, int credit, User user) {
         this.name = name;
-        this.credit = credit;
+        this.credits = credit;
         this.user = user;
         this.done = false;
     }
@@ -28,7 +28,7 @@ public class Course {
     }
 
     public int getCredit() {
-        return credit;
+        return credits;
     }
 
     public boolean isDone() {
