@@ -69,7 +69,7 @@ public class SQLUserDao implements UserDao {
         stmt.setString(1, username);
         
         ResultSet rs = stmt.executeQuery();
-        if(!rs.next()) {
+        if (!rs.next()) {
             return null;
         }
         User user = new User(rs.getString("name"), rs.getString("username"), rs.getString("password"));

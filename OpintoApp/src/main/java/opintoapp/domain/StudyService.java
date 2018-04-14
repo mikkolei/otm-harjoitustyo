@@ -21,23 +21,32 @@ public class StudyService {
         return false;
     }
     
+    public void markDone(String name, int grade) {
+        try {
+            courseDao.setDone(name, grade);
+        } catch (Exception e) {
+            
+        }
+    }
+    
     public boolean login(String username, String password) throws SQLException {
         User user = userDao.findByUsernameAndPassword(username, password);
-        if (user == null)
+        if (user == null) {
             return false;
+        }
         loggedIn = user;
         return true;
     }
     
     public boolean createUser(String name, String username, String password) throws SQLException {
-        if(userDao.findByUsername(username) != null) {
+        if (userDao.findByUsername(username) != null) {
             return false;
         }
         User user = new User(name, username, password);
         try {
             userDao.create(user);
             return true;
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             return false;
         }
         

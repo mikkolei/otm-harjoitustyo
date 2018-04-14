@@ -6,19 +6,20 @@ public class Course {
     private String name;
     private int credits;
     private boolean done;
-    private String grade;
+    private int grade;
     private User user;
 
-    public Course(String name, int credit, boolean done, String grade, User user) {
+    public Course(String name, int credits, boolean done, int grade, User user) {
         this.name = name;
-        this.credits = credit;
+        this.credits = credits;
         this.done = done;
+        this.grade = grade;
         this.user = user;
     }
     
-    public Course(String name, int credit, User user) {
+    public Course(String name, int credits, User user) {
         this.name = name;
-        this.credits = credit;
+        this.credits = credits;
         this.user = user;
         this.done = false;
     }
@@ -27,7 +28,7 @@ public class Course {
         return name;
     }
 
-    public int getCredit() {
+    public int getCredits() {
         return credits;
     }
 
@@ -39,7 +40,12 @@ public class Course {
         return user;
     }
     
+    public void setDone() {
+        this.done = true;
+    }
     
-    
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
     
 }
