@@ -1,19 +1,10 @@
 
-package opintoapp.dao;
+package opintoapp.domain;
 
-import java.util.ArrayList;
 import java.util.List;
-import opintoapp.domain.Course;
+import opintoapp.dao.CourseDao;
 
-public class SQLCourseDao implements CourseDao {
-    
-    private List<Course> courses;
-    private Database db;
-    
-    public SQLCourseDao(Database db) {
-        this.db = db;
-        courses = new ArrayList<>();
-    }
+public class FakeCourseDao implements CourseDao {
 
     @Override
     public Course create(Course course) throws Exception {

@@ -10,6 +10,6 @@ public interface CourseDao {
     
     List<Course> getAll();
     
-    void setDone(String name, int grade) throws Exception;
+    void setDone(int id, int grade) throws Exception;
     
 }

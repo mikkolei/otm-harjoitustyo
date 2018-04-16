@@ -30,6 +30,7 @@ public class Main extends Application {
     private Scene userStudyScene;
     private Label menuLabel = new Label();
     private Stage stage;
+    private UserStudySceneController userStudySceneController;
     
     public static void main(String[] args) {
         launch(args);
@@ -60,7 +61,8 @@ public class Main extends Application {
         
         FXMLLoader userStudySceneLoader = new FXMLLoader(getClass().getResource("/fxml/UserStudyScene.fxml"));
         Parent studyPane = userStudySceneLoader.load();
-        UserStudySceneController userStudySceneController = userStudySceneLoader.getController();
+//        UserStudySceneController 
+        userStudySceneController = userStudySceneLoader.getController();
         userStudySceneController.setStudyService(studyService);
         userStudySceneController.setApplication(this);
         userStudyScene = new Scene(studyPane);
@@ -88,6 +90,7 @@ public class Main extends Application {
     
     public void setUserStudyScene() {
         stage.setScene(userStudyScene);
+        userStudySceneController.setLabel();
     }
     
     public void setCreateNewUserScene() {

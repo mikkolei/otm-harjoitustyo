@@ -46,7 +46,7 @@ public class LoginSceneController {
 //                    redrawcourse list
 
             } else {
-                text.setText("user does not exist");
+                text.setText("user does not exist or password is wrong");
                 text.setTextFill(Color.RED);
             }
         } catch (SQLException ex) {

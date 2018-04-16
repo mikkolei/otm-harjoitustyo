@@ -49,8 +49,9 @@ Sovellus tallettaa tiedot sqlite3:lla tehtyyn tietokantaan.
 Tietokannan User-taulu on tehty seuraavalla komennolla:
 ```
 CREATE TABLE User (
+   id integer PRIMARY KEY,
    name varchar(50),
-   username varchar(50,
+   username varchar(50),
    password varchar(50)
 );
 ```

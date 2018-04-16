@@ -12,9 +12,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import opintoapp.domain.StudyService;
 import javafx.scene.paint.Color;
+import opintoapp.domain.User;
 
 public class CreateNewUserSceneController {
-
+    
+    private User user;
     private StudyService studyService;
     private Main application;
 
@@ -49,11 +51,13 @@ public class CreateNewUserSceneController {
             String usernameHandler = username.getText();
             String nameHandler = name.getText();
             String passwordHandler = password.getText();
+            
+            user = new User(nameHandler, usernameHandler, passwordHandler);
 
             if (usernameHandler.length() <= 2 || nameHandler.length() <= 2 || passwordHandler.length() <= 2 || usernameHandler.length() > 50 || nameHandler.length() > 50 || passwordHandler.length() > 50) {
                 text.setText("username, name and password must be 3-50 characters long");
                 text.setTextFill(Color.RED);
-            } else if (studyService.createUser(nameHandler, usernameHandler, passwordHandler)) {
+            } else if (studyService.createUser(user)) {
                 text.setText("new user created");
                 text.setTextFill(Color.GREEN);
             } else {

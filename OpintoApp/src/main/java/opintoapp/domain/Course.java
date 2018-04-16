@@ -3,13 +3,15 @@ package opintoapp.domain;
 
 public class Course {
     
+    private int id;
     private String name;
     private int credits;
     private boolean done;
     private int grade;
     private User user;
 
-    public Course(String name, int credits, boolean done, int grade, User user) {
+    public Course(int id, String name, int credits, boolean done, int grade, User user) {
+        this.id = id;
         this.name = name;
         this.credits = credits;
         this.done = done;
@@ -17,7 +19,8 @@ public class Course {
         this.user = user;
     }
     
-    public Course(String name, int credits, User user) {
+    public Course(int id, String name, int credits, User user) {
+        this.id = id;
         this.name = name;
         this.credits = credits;
         this.user = user;

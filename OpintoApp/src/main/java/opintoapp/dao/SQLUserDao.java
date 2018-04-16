@@ -25,6 +25,7 @@ public class SQLUserDao implements UserDao {
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO User "
                     + "(name, username, password)"
                     + " VALUES (?, ?, ?)");
+//            stmt.setInt(1, user.getId());
             stmt.setString(1, user.getName());
             stmt.setString(2, user.getUsername());
             stmt.setString(3, user.getPassword());
@@ -32,6 +33,7 @@ public class SQLUserDao implements UserDao {
             stmt.executeUpdate();
             stmt.close();
             conn.close();
+            users.add(user);
         } catch (SQLException e) {
 
         }
@@ -51,10 +53,11 @@ public class SQLUserDao implements UserDao {
         if (!hasOne) {
             return null;
         }
+        int id = rs.getInt("id");
         String name = rs.getString("name");
         String username1 = rs.getString("username");
         String password1 = rs.getString("password");
-        User user = new User(name, username1, password1);
+        User user = new User(id, name, username1, password1);
 
         stmt.close();
         conn.close();
@@ -72,7 +75,7 @@ public class SQLUserDao implements UserDao {
         if (!rs.next()) {
             return null;
         }
-        User user = new User(rs.getString("name"), rs.getString("username"), rs.getString("password"));
+        User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("username"), rs.getString("password"));
         stmt.close();
         conn.close();
         return user;
@@ -80,7 +83,7 @@ public class SQLUserDao implements UserDao {
 
     @Override
     public List<User> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return users;
     }
 
 }
