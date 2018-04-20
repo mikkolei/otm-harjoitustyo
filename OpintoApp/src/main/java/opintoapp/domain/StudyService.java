@@ -3,6 +3,8 @@ package opintoapp.domain;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import opintoapp.dao.*;
 
@@ -16,10 +18,22 @@ public class StudyService {
         this.userDao = userDao;
         this.courseDao = courseDao;
     }
+    
+//    public StudyService(Database db) {
+//        
+//    }
 
-    public boolean createCourse(int id, String content, int credit) {
-        Course course = new Course(id, content, credit, loggedIn);
-        return false;
+    public boolean createCourse(Course course) {
+        Course c = new Course(getLoggedIn(), course.getName(), course.getCredits());
+        try {
+            courseDao.create(c);
+            loggedIn.addCourse(c);
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+        
     }
 
     public List<Course> getUndoneCourses() {

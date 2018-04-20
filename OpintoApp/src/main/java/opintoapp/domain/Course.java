@@ -19,11 +19,11 @@ public class Course {
         this.user = user;
     }
     
-    public Course(int id, String name, int credits, User user) {
-        this.id = id;
+    public Course(User user, String name, int credits) {
+//        this.id = id;
+        this.user = user;
         this.name = name;
         this.credits = credits;
-        this.user = user;
         this.done = false;
     }
 
@@ -49,6 +49,11 @@ public class Course {
     
     public void setGrade(int grade) {
         this.grade = grade;
+    }
+    
+    @Override
+    public String toString() {
+        return this.name;
     }
     
 }

@@ -3,6 +3,7 @@ package opintoapp.dao;
 
 import java.util.List;
 import opintoapp.domain.Course;
+import opintoapp.domain.User;
 
 public interface CourseDao {
     

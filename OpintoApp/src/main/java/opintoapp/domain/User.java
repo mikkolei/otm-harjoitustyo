@@ -58,6 +58,10 @@ public class User {
         return user.courses;
     }
     
+    public void addCourse(Course c) {
+        courses.add(c);
+    }
+    
     @Override
     public boolean equals(Object object) {
         if (!(object instanceof User)) {
@@ -68,8 +72,8 @@ public class User {
         return username.equals(other.username);
     }
     
-//    @Override
-//    public String toString() {
-//        return this.username;
-//    }
+    @Override
+    public String toString() {
+        return this.username;
+    }
 }

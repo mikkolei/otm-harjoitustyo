@@ -34,6 +34,7 @@ public class SQLUserDao implements UserDao {
             stmt.close();
             conn.close();
             users.add(user);
+            return user;
         } catch (SQLException e) {
 
         }
