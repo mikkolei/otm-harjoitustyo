@@ -10,7 +10,7 @@
 
 ## Komentorivitoiminnot
 
-#### Testaus
+### Testaus
 testit suoritetaan komennolla 
 ```
 mvn test
@@ -19,10 +19,10 @@ testikattavuus luodaan komennolla
 ```
 mvn jacoco:report
 ```
-#### Suoritettavan jarin generointi
+### Suoritettavan jarin generointi
 komento
 
-#### Checkstyle
+### Checkstyle
 Checkstylen määrittelemät tarkastukset saadaan komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
