@@ -7,11 +7,16 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -49,6 +54,18 @@ public class UserStudySceneController implements Initializable {
         label.setText("Welcome " + this.studyService.getLoggedIn().getUsername());
     }
     
+//    public Node createCourseNode(Course course) {
+//        HBox box = new HBox(10);
+//        Label label = new Label(course.getName());
+//        label.setMinHeight(28);
+//        Button doneButton = new Button("done");
+//        Region spacer = new Region();
+//        HBox.setHgrow(spacer, Priority.ALWAYS);
+//        box.setPadding(new Insets(0, 5, 0, 5));
+//        box.getChildren().addAll(label, spacer, doneButton);
+//        return box;
+//    }
+    
     @FXML
     private void handleLogoutButton(ActionEvent event) {
         try {
@@ -64,20 +81,22 @@ public class UserStudySceneController implements Initializable {
         String name = courseName.getText();
         int crts = (int) credits.getValue();
         c = new Course(this.studyService.getLoggedIn(), name, crts);
-//        c = new Course("", 0, this.studyService.getLoggedIn());
         
         if (name.length() < 2 || name.length() > 100) {
-            errorMessage.setText("name length must be between 3-100 characters long");
-            errorMessage.setMaxHeight(50);
+            errorMessage.setText("name length must be\n"
+                    + "between 3-100 characters\n"
+                    + "long");
             errorMessage.setTextFill(Color.RED);
-            
         } else if (studyService.createCourse(c)) {
             errorMessage.setText("New course created");
             errorMessage.setTextFill(Color.GREEN);
             courseName.setText("");
         }
     }
-    
+//    @FXML
+//    public void drawUndoneCourses() {
+//        
+//    } 
     
     
     @Override
