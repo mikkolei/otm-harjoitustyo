@@ -38,17 +38,17 @@ public class UserTest {
     }
     
     @Test
-    public void getUsername() {
+    public void getUsernameTest() {
         assertEquals("username", u.getUsername());
     }
     
     @Test
-    public void getName() {
+    public void getNameTest() {
         assertEquals("name", u.getName());
     }
     
     @Test
-    public void getPassword() {
+    public void getPasswordTest() {
         assertEquals("password", u.getPassword());
     }
 }

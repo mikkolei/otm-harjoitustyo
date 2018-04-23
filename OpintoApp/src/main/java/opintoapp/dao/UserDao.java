@@ -13,6 +13,8 @@ public interface UserDao {
     
     User findByUsername(String username) throws SQLException;
     
+    User findById(int id) throws SQLException;
+    
     List<User> getAll();
     
 }

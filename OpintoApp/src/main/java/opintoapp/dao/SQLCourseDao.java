@@ -3,11 +3,13 @@ package opintoapp.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import opintoapp.domain.Course;
 import opintoapp.domain.StudyService;
+import opintoapp.domain.User;
 
 public class SQLCourseDao implements CourseDao {
     
@@ -47,12 +49,27 @@ public class SQLCourseDao implements CourseDao {
     }
 
     @Override
-    public List<Course> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Course> getAll(User user) throws SQLException {
+        Connection conn = db.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Course WHERE user_id = ?");
+        stmt.setInt(1, user.getId());
+        
+        ResultSet rs = stmt.executeQuery();
+        List<Course> returnCourses = new ArrayList<>();
+        
+        while (rs.next()) {
+            Integer userId = rs.getInt("user_id");
+            
+            returnCourses.add(new Course(userDao.findById(userId), rs.getString("name"), rs.getInt("credits")));
+        }
+        rs.close();
+        stmt.close();
+        conn.close();
+        return returnCourses;
     }
 
     @Override
-    public void setDone(int id, int grade) throws Exception {
+    public void setDone(int id, int grade) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

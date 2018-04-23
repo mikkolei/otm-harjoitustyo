@@ -77,6 +77,23 @@ public class SQLUserDao implements UserDao {
             return null;
         }
         User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("username"), rs.getString("password"));
+        rs.close();
+        stmt.close();
+        conn.close();
+        return user;
+    }
+    
+    @Override
+    public User findById(int id) throws SQLException {
+        Connection conn = db.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM User WHERE id = ?");
+        stmt.setInt(1, id);
+        ResultSet rs = stmt.executeQuery();
+        if (!rs.next()) {
+            return null;
+        }
+        User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("username"), rs.getString("password"));
+        rs.close();
         stmt.close();
         conn.close();
         return user;

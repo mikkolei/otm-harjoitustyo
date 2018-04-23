@@ -36,21 +36,21 @@ public class StudyService {
         
     }
 
-    public List<Course> getUndoneCourses() {
+    public List<Course> getUndoneCourses() throws SQLException {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
-        return courseDao.getAll().stream()
+        return courseDao.getAll(loggedIn).stream()
                 .filter(c -> c.getUser().equals(loggedIn))
                 .filter(c -> !c.isDone())
                 .collect(Collectors.toList());
     }
 
-    public List<Course> getDoneCourses() {
+    public List<Course> getDoneCourses() throws SQLException {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
-        return courseDao.getAll().stream()
+        return courseDao.getAll(loggedIn).stream()
                 .filter(c -> c.getUser().equals(loggedIn))
                 .filter(c -> c.isDone())
                 .collect(Collectors.toList());

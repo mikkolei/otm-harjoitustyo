@@ -88,9 +88,10 @@ public class Main extends Application {
         stage.setScene(loginScene);
     }
     
-    public void setUserStudyScene() {
+    public void setUserStudyScene() throws SQLException {
         stage.setScene(userStudyScene);
         userStudySceneController.setLabel();
+        userStudySceneController.setUndoneCourseList();
     }
     
     public void setCreateNewUserScene() {

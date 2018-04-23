@@ -43,6 +43,10 @@ public class Course {
         return user;
     }
     
+    public int getGrade() {
+        return grade;
+    }
+    
     public void setDone() {
         this.done = true;
     }
