@@ -61,6 +61,8 @@ eli ensin syötetään nimi, sitten käyttäjänimi ja lopuksi salasana. Kaikki 
 
 #### Käyttäjän sisäänkirjautuminen
 
+![loginsekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/login.png)
+
 #### Uuden käyttäjän luominen
 
 #### Uuden kurssin luominen käyttäjälle
