@@ -43,8 +43,6 @@ public class LoginSceneController {
                 username.setText("");
                 password.setText("");
                 this.application.setUserStudyScene();
-//                    redrawcourse list
-
             } else {
                 text.setText("user does not exist or password is wrong");
                 text.setTextFill(Color.RED);

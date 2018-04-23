@@ -42,7 +42,7 @@ public class Main extends Application {
     public void init() throws Exception {
         this.db = new Database("jdbc:sqlite:opintoApp.db");
         SQLUserDao sqlUserDao = new SQLUserDao(db);
-        SQLCourseDao sqlCourseDao = new SQLCourseDao(db);
+        SQLCourseDao sqlCourseDao = new SQLCourseDao(db, sqlUserDao);
         this.studyService = new StudyService(sqlUserDao, sqlCourseDao);
         
         FXMLLoader loginSceneLoader = new FXMLLoader(getClass().getResource("/fxml/LoginScene.fxml"));
@@ -91,7 +91,7 @@ public class Main extends Application {
     public void setUserStudyScene() throws SQLException {
         stage.setScene(userStudyScene);
         userStudySceneController.setLabel();
-        userStudySceneController.setUndoneCourseList();
+        userStudySceneController.drawUndoneCourses();
     }
     
     public void setCreateNewUserScene() {

@@ -19,9 +19,10 @@ public class SQLCourseDao implements CourseDao {
     private UserDao userDao;
     private CourseDao courseDao;
     
-    public SQLCourseDao(Database db) {
+    public SQLCourseDao(Database db, UserDao userDao) {
         this.db = db;
         courses = new ArrayList<>();
+        this.userDao = userDao;
 //        this.studyService = ss;
 //        studyService = new StudyService(userDao, courseDao);
     }
@@ -58,9 +59,7 @@ public class SQLCourseDao implements CourseDao {
         List<Course> returnCourses = new ArrayList<>();
         
         while (rs.next()) {
-            Integer userId = rs.getInt("user_id");
-            
-            returnCourses.add(new Course(userDao.findById(userId), rs.getString("name"), rs.getInt("credits")));
+            returnCourses.add(new Course(userDao.findById(rs.getInt("user_id")), rs.getString("name"), rs.getInt("credits")));
         }
         rs.close();
         stmt.close();
