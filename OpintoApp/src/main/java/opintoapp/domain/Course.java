@@ -13,8 +13,8 @@ public class Course {
     private int grade;
     private User user;
 
-    public Course(int id, String name, int credits, boolean done, int grade, User user) {
-        this.id = id;
+    public Course(User user, String name, int credits, boolean done, int grade) {
+//        this.id = id;
         this.name.set(name);
         this.credits = credits;
         this.done = done;

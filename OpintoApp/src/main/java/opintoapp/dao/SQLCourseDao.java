@@ -59,7 +59,7 @@ public class SQLCourseDao implements CourseDao {
         List<Course> returnCourses = new ArrayList<>();
         
         while (rs.next()) {
-            returnCourses.add(new Course(userDao.findById(rs.getInt("user_id")), rs.getString("name"), rs.getInt("credits")));
+            returnCourses.add(new Course(userDao.findById(rs.getInt("user_id")), rs.getString("name"), rs.getInt("credits"), rs.getBoolean("done"), rs.getInt("grade")));
         }
         rs.close();
         stmt.close();
@@ -69,7 +69,13 @@ public class SQLCourseDao implements CourseDao {
 
     @Override
     public void setDone(int id, int grade) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection conn = db.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("UPDATE Course SET done = true, grade = ? WHERE id = ?");
+        stmt.setInt(1, grade);
+        stmt.setInt(2, id);
+        stmt.executeUpdate();
+        stmt.close();
+        conn.close();
     }
     
 }

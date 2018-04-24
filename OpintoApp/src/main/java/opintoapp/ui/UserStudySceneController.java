@@ -39,12 +39,6 @@ public class UserStudySceneController implements Initializable {
     private ObservableList<Course> doneCourses;
     private boolean showUndone;
     private TableColumn gradeColumn;
-
-//    @FXML
-//    private VBox courseNodes;
-//    
-//    @FXML
-//    private ScrollPane scroll;
     
     
     @FXML 
@@ -76,7 +70,6 @@ public class UserStudySceneController implements Initializable {
     }
     
     public void setUndoneCourseList() throws SQLException {
-//        scroll.setContent(courseNodes);
         this.undoneCourses = FXCollections.observableArrayList(this.studyService.getUndoneCourses());
         tableView.setItems(undoneCourses);
         showUndone = true;
@@ -85,18 +78,8 @@ public class UserStudySceneController implements Initializable {
     public void setDoneCourseList() throws SQLException {
         this.doneCourses = FXCollections.observableArrayList(this.studyService.getDoneCourses());
         tableView.setItems(doneCourses);
+        showUndone = false;
     }
-//    public Node createCourseNode(Course course) {
-//        HBox box = new HBox(10);
-//        Label lbl = new Label(course.getName());
-//        lbl.setMinHeight(28);
-//        Button doneButton = new Button("done");
-//        Region spacer = new Region();
-//        HBox.setHgrow(spacer, Priority.ALWAYS);
-//        box.setPadding(new Insets(0, 5, 0, 5));
-//        box.getChildren().addAll(lbl, spacer, doneButton);
-//        return box;
-//    }
     
     @FXML
     private void handleLogoutButton(ActionEvent event) {
@@ -124,22 +107,19 @@ public class UserStudySceneController implements Initializable {
             errorMessage.setTextFill(Color.GREEN);
             courseName.setText("");
             setUndoneCourseList();
-//            drawUndoneCourses();
         }
     }
     
     @FXML
     private void handleSwitchButton(ActionEvent event) throws SQLException {
         if(showUndone) {
-            setDoneCourseList();
             gradeColumn = new TableColumn<>("Grade");
-            gradeColumn.setCellValueFactory(new PropertyValueFactory("grade"));
+            gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
             tableView.getColumns().add(gradeColumn);
-            showUndone = false;
+            setDoneCourseList();
         } else {
-            setUndoneCourseList();
             tableView.getColumns().remove(gradeColumn);
-            showUndone = true;
+            setUndoneCourseList();
         }
     }
     
@@ -147,23 +127,12 @@ public class UserStudySceneController implements Initializable {
     private void handleMarkDoneButton(ActionEvent event) {
         
     }
-//    public void drawUndoneCourses() throws SQLException {
-//        courseNodes.getChildren().clear();
-//        List<Course> undoneCourses = this.studyService.getUndoneCourses();
-//        undoneCourses.forEach(course -> {
-//            courseNodes.getChildren().add(createCourseNode(course));
-//        });
-//        setUndoneCourseList();
-//    } 
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         SpinnerValueFactory<Integer> creditsValues = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 5);
         credits.setValueFactory(creditsValues);
-//        courseNodes = new VBox();
-//        scroll = new ScrollPane();
-        // TODO
     }    
     
 }
