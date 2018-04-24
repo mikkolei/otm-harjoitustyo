@@ -21,6 +21,9 @@ mvn jacoco:report
 ```
 ### Suoritettavan jarin generointi
 komento
+```
+mvn package
+```
 
 ### Checkstyle
 Checkstylen määrittelemät tarkastukset saadaan komennolla
