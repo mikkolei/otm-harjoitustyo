@@ -9,7 +9,7 @@
 [Arkkitehtuurikuvaus](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
 ## Releases
-[Viikko5_release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko5)
+[Viikko 5 release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko5)
 
 ## Komentorivitoiminnot
 
