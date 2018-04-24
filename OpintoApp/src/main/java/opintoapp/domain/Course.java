@@ -1,10 +1,13 @@
 
 package opintoapp.domain;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Course {
     
     private int id;
-    private String name;
+    private SimpleStringProperty name = new SimpleStringProperty("");
     private int credits;
     private boolean done;
     private int grade;
@@ -12,7 +15,7 @@ public class Course {
 
     public Course(int id, String name, int credits, boolean done, int grade, User user) {
         this.id = id;
-        this.name = name;
+        this.name.set(name);
         this.credits = credits;
         this.done = done;
         this.grade = grade;
@@ -22,14 +25,15 @@ public class Course {
     public Course(User user, String name, int credits) {
 //        this.id = id;
         this.user = user;
-        this.name = name;
+        this.name.set(name);
         this.credits = credits;
         this.done = false;
     }
 
     public String getName() {
-        return name;
+        return this.name.getValue();
     }
+    
 
     public int getCredits() {
         return credits;
@@ -57,7 +61,7 @@ public class Course {
     
     @Override
     public String toString() {
-        return this.name;
+        return this.name.get() + ", " + this.credits;
     }
     
 }

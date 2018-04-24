@@ -35,14 +35,17 @@ public class UserStudySceneController implements Initializable {
     private StudyService studyService;
     private Main application;
     private Course c;
+    private ObservableList<Course> undoneCourses;
+    private ObservableList<Course> doneCourses;
+    private boolean showUndone;
+    private TableColumn gradeColumn;
+
+//    @FXML
+//    private VBox courseNodes;
+//    
+//    @FXML
+//    private ScrollPane scroll;
     
-    @FXML
-    private VBox courseNodes;
-    
-    @FXML
-    private ScrollPane scroll;
-//    private ObservableList<Course> undoneCourses;
-//    private ObservableList<Course> doneCourses;
     
     @FXML 
     private Label label;
@@ -57,7 +60,7 @@ public class UserStudySceneController implements Initializable {
     private Label errorMessage;
     
     @FXML 
-    private TableView<Course> table;
+    private TableView<Course> tableView;
     
     
     
@@ -73,48 +76,27 @@ public class UserStudySceneController implements Initializable {
     }
     
     public void setUndoneCourseList() throws SQLException {
-        scroll.setContent(courseNodes);
-//        this.undoneCourses = FXCollections.observableArrayList(this.studyService.getUndoneCourses());
-//        table.setItems(undoneCourses);
-//        TableColumn<Course, String> nameColumn = new TableColumn<>("Name");
-//        nameColumn.setMinWidth(200);
-//        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-//        
-//        TableColumn<Course, Integer> creditColumn = new TableColumn<>("Credits");
-//        creditColumn.setMinWidth(100);
-//        creditColumn.setCellValueFactory(new PropertyValueFactory<>("credits"));
-//        
-//        TableColumn<Course, Integer> user_idColumn = new TableColumn<>("User");
-//        nameColumn.setMinWidth(200);
-//        nameColumn.setCellValueFactory(new PropertyValueFactory<>("user_id"));
-//        
-//        TableColumn<Course, Integer> idColumn = new TableColumn<>("Id");
-//        nameColumn.setMinWidth(200);
-//        nameColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-//        
-//        TableColumn<Course, Boolean> doneColumn = new TableColumn<>("Done");
-//        nameColumn.setMinWidth(200);
-//        nameColumn.setCellValueFactory(new PropertyValueFactory<>("done"));
-//        
-//        TableColumn<Course, Integer> gradeColumn = new TableColumn<>("Grade");
-//        nameColumn.setMinWidth(200);
-//        nameColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-//        table = new TableView<>();
-
-//        table.getColumns().addAll(nameColumn, creditColumn, user_idColumn, idColumn, doneColumn, gradeColumn);
-        
+//        scroll.setContent(courseNodes);
+        this.undoneCourses = FXCollections.observableArrayList(this.studyService.getUndoneCourses());
+        tableView.setItems(undoneCourses);
+        showUndone = true;
     }
-    public Node createCourseNode(Course course) {
-        HBox box = new HBox(10);
-        Label lbl = new Label(course.getName());
-        lbl.setMinHeight(28);
-        Button doneButton = new Button("done");
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-        box.setPadding(new Insets(0, 5, 0, 5));
-        box.getChildren().addAll(lbl, spacer, doneButton);
-        return box;
+    
+    public void setDoneCourseList() throws SQLException {
+        this.doneCourses = FXCollections.observableArrayList(this.studyService.getDoneCourses());
+        tableView.setItems(doneCourses);
     }
+//    public Node createCourseNode(Course course) {
+//        HBox box = new HBox(10);
+//        Label lbl = new Label(course.getName());
+//        lbl.setMinHeight(28);
+//        Button doneButton = new Button("done");
+//        Region spacer = new Region();
+//        HBox.setHgrow(spacer, Priority.ALWAYS);
+//        box.setPadding(new Insets(0, 5, 0, 5));
+//        box.getChildren().addAll(lbl, spacer, doneButton);
+//        return box;
+//    }
     
     @FXML
     private void handleLogoutButton(ActionEvent event) {
@@ -141,26 +123,46 @@ public class UserStudySceneController implements Initializable {
             errorMessage.setText("New course created");
             errorMessage.setTextFill(Color.GREEN);
             courseName.setText("");
-            drawUndoneCourses();
+            setUndoneCourseList();
+//            drawUndoneCourses();
         }
     }
     
-    public void drawUndoneCourses() throws SQLException {
-        courseNodes.getChildren().clear();
-        List<Course> undoneCourses = this.studyService.getUndoneCourses();
-        undoneCourses.forEach(course -> {
-            courseNodes.getChildren().add(createCourseNode(course));
-        });
-        setUndoneCourseList();
-    } 
+    @FXML
+    private void handleSwitchButton(ActionEvent event) throws SQLException {
+        if(showUndone) {
+            setDoneCourseList();
+            gradeColumn = new TableColumn<>("Grade");
+            gradeColumn.setCellValueFactory(new PropertyValueFactory("grade"));
+            tableView.getColumns().add(gradeColumn);
+            showUndone = false;
+        } else {
+            setUndoneCourseList();
+            tableView.getColumns().remove(gradeColumn);
+            showUndone = true;
+        }
+    }
+    
+    @FXML
+    private void handleMarkDoneButton(ActionEvent event) {
+        
+    }
+//    public void drawUndoneCourses() throws SQLException {
+//        courseNodes.getChildren().clear();
+//        List<Course> undoneCourses = this.studyService.getUndoneCourses();
+//        undoneCourses.forEach(course -> {
+//            courseNodes.getChildren().add(createCourseNode(course));
+//        });
+//        setUndoneCourseList();
+//    } 
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         SpinnerValueFactory<Integer> creditsValues = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 5);
         credits.setValueFactory(creditsValues);
-        courseNodes = new VBox();
-        scroll = new ScrollPane();
+//        courseNodes = new VBox();
+//        scroll = new ScrollPane();
         // TODO
     }    
     
