@@ -12,4 +12,5 @@ päivä | aika | tehdyt asiat
 13.4.2018 | 2 | Käyttöliittymä muutettu FXML muotoon
 16.4.2018 | 4 | Testausta parannettu, tietokantaa muokattu, käyttöliittymää muokattu, ja pieniä toiminnallisia muutoksia
 23.4.2018 | 5 | Testausta lisää, kurssien lisääminen menee tietokantaan, ja muita pienempiä muokkauksia 
-yht | 28 |
+24.4.2018 | 3 | Jar generointi onnistuu, tableview toimintaan
+yht | 31 |
