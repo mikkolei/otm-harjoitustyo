@@ -18,7 +18,7 @@ public class CourseTest {
     @Before
     public void setUp() {
         this.u = new User("tester", "tester", "test");
-        this.c1 = new Course(u, "OTM", 5, true, 4);
+        this.c1 = new Course(1, u, "OTM", 5, true, 4);
         this.c2 = new Course(u, "Tira", 10);
     }
     

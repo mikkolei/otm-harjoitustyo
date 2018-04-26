@@ -68,11 +68,6 @@ public class Main extends Application {
         userStudyScene = new Scene(studyPane);
     }
     
-//    public Node createCourseNode(Course course) {
-//        HBox frame = new HBox(20);
-//        Label
-//        return Node;
-//    }
 
     @Override
     public void start(Stage stage) throws Exception {

@@ -2,7 +2,6 @@
 package opintoapp.domain;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 public class Course {
     
@@ -13,8 +12,8 @@ public class Course {
     private int grade;
     private User user;
 
-    public Course(User user, String name, int credits, boolean done, int grade) {
-//        this.id = id;
+    public Course(int id, User user, String name, int credits, boolean done, int grade) {
+        this.id = id;
         this.name.set(name);
         this.credits = credits;
         this.done = done;
@@ -28,6 +27,10 @@ public class Course {
         this.name.set(name);
         this.credits = credits;
         this.done = false;
+    }
+    
+    public int getId() {
+        return id;
     }
 
     public String getName() {
