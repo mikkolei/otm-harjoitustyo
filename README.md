@@ -8,6 +8,8 @@
 
 [Arkkitehtuurikuvaus](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/käyttöohje.md)
+
 ## Releaset
 [Viikko 5 release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko5)
 
