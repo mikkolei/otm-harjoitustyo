@@ -22,6 +22,7 @@ testikattavuus luodaan komennolla
 ```
 mvn jacoco:report
 ```
+Testikattavuutta voidaan tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 ### Suoritettavan jarin generointi
 komento
 ```
@@ -33,4 +34,11 @@ Checkstylen määrittelemät tarkastukset saadaan komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
+Virheilmoitukset voidaan tarkistaa avaamalla selaimella tiedosto  target/site/checkstyle.html
 
+### Javadoc
+Javadoc generoidaan komennolla
+```
+mvn javadoc:javadoc
+```
+Javadocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
