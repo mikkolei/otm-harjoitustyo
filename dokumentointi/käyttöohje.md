@@ -10,9 +10,9 @@ Tietokannan luominen
 
 Ohjelma käynnistetään komennolla
 
-´´´
+```
 java -jar opintoapp.jar
-´´´
+```
 
 ## Kirjautuminen
 
