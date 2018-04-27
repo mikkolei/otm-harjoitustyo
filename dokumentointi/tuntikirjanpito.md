@@ -13,4 +13,6 @@ päivä | aika | tehdyt asiat
 16.4.2018 | 4 | Testausta parannettu, tietokantaa muokattu, käyttöliittymää muokattu, ja pieniä toiminnallisia muutoksia
 23.4.2018 | 5 | Testausta lisää, kurssien lisääminen menee tietokantaan, ja muita pienempiä muokkauksia 
 24.4.2018 | 3 | Jar generointi onnistuu, tableview toimintaan
-yht | 31 |
+26.4.2018 | 2 | Kurssit voi merkitä tehdyiksi ja taulukot päivittyvät oikein
+27.4.2018 | 3 | Javadoc käyttöönotto, refaktorointia, testausta parannettu
+yht | 36 |
