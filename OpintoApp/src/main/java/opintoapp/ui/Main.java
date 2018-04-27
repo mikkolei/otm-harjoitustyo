@@ -1,22 +1,16 @@
 
 package opintoapp.ui;
 
+/**
+ * Main class for the application
+ */
+
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import opintoapp.dao.*;
 import opintoapp.domain.*;
@@ -28,14 +22,12 @@ public class Main extends Application {
     private Scene loginScene;
     private Scene createNewUserScene;
     private Scene userStudyScene;
-    private Label menuLabel = new Label();
     private Stage stage;
     private UserStudySceneController userStudySceneController;
     
     public static void main(String[] args) {
         launch(args);
         System.out.println("Hello world");
-        
     }
     
     @Override
@@ -61,7 +53,6 @@ public class Main extends Application {
         
         FXMLLoader userStudySceneLoader = new FXMLLoader(getClass().getResource("/fxml/UserStudyScene.fxml"));
         Parent studyPane = userStudySceneLoader.load();
-//        UserStudySceneController 
         userStudySceneController = userStudySceneLoader.getController();
         userStudySceneController.setStudyService(studyService);
         userStudySceneController.setApplication(this);
@@ -71,14 +62,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        // login scene
-        
         this.stage = stage;
         stage.setTitle("OpintoApp");
         setLoginScene();
         stage.show();
-        
     }
+    
     public void setLoginScene() {
         stage.setScene(loginScene);
     }
@@ -87,7 +76,6 @@ public class Main extends Application {
         stage.setScene(userStudyScene);
         userStudySceneController.setLabel();
         userStudySceneController.setUndoneCourseList();
-//        userStudySceneController.drawUndoneCourses();
     }
     
     public void setCreateNewUserScene() {

@@ -15,7 +15,6 @@ public class StudyServiceUserTest {
     
 //    private Database db;
     private StudyService studyService;
-    private User user;
     private FakeUserDao fakeUserDao;
     private FakeCourseDao fakeCourseDao;
     
@@ -47,7 +46,7 @@ public class StudyServiceUserTest {
     
     @Test
     public void createUserTest() throws SQLException {
-        this.user = new User(2, "mikko", "testertester", "test");
+        User user = new User(2, "mikko", "testertester", "test");
         boolean result = this.studyService.createUser(user);
         assertTrue(result);
     }

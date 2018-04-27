@@ -1,5 +1,9 @@
 package opintoapp.ui;
 
+/**
+ * Controller class for the create a new user scene
+ */
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -9,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import opintoapp.domain.StudyService;
 import javafx.scene.paint.Color;
 import opintoapp.domain.User;

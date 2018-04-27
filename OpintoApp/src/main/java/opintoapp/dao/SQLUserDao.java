@@ -1,5 +1,9 @@
 package opintoapp.dao;
 
+/**
+ * Class that implements UserDao and is responsible of the SQL commands of the User class
+ */
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

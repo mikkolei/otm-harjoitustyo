@@ -1,6 +1,10 @@
 
 package opintoapp.domain;
 
+/**
+ * Class to represent the user of the system
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,17 +46,17 @@ public class User {
         return password;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
     
     public List<Course> getCourses(User user) {
         return user.courses;

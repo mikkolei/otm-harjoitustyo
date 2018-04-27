@@ -52,6 +52,12 @@ public class CourseTest {
         assertEquals(u, c2.getUser());
     }
     
+    @Test 
+    public void getIdTest() {
+        assertEquals(1, c1.getId());
+        assertEquals(0, c2.getId());
+    }
+    
 //    @After
 //    public void tearDown() {
 //    }

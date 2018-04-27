@@ -1,8 +1,11 @@
 
 package opintoapp.ui;
 
+/**
+ * Controller class for the mark done popup window
+ */
+
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,6 +41,12 @@ public class PopUpSceneController implements Initializable {
     private Button cancelButton;
     
     
+    /**
+     * Method to set the scene of the popup window
+     * @param title title of the popup window
+     * @param message message of the popup window
+     * @param root1 parent scene
+     */
     public void display(String title, String message, Parent root1) {
         stage = new Stage();
         stage.setTitle(title);
@@ -47,7 +56,10 @@ public class PopUpSceneController implements Initializable {
         stage.showAndWait();
         
     }
-    
+    /**
+     * Method to get the value of the grade spinner
+     * @return grade value
+     */
     public int returnGradeValue() {
         return gradeValue;
     }
@@ -62,7 +74,12 @@ public class PopUpSceneController implements Initializable {
     private void handleCancelButton(ActionEvent event) {
         stage.close();
     }
-
+    
+    /**
+     * Set the features for the scene
+     * @param url
+     * @param rb 
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         SpinnerValueFactory<Integer> gradeValues = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 5, 5);

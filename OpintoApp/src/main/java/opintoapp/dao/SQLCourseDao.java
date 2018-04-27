@@ -7,24 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import opintoapp.domain.Course;
-import opintoapp.domain.StudyService;
-import opintoapp.domain.User;
+import opintoapp.domain.*;
 
 public class SQLCourseDao implements CourseDao {
     
     private List<Course> courses;
     private Database db;
-    private StudyService studyService;
     private UserDao userDao;
-    private CourseDao courseDao;
     
     public SQLCourseDao(Database db, UserDao userDao) {
         this.db = db;
         courses = new ArrayList<>();
         this.userDao = userDao;
-//        this.studyService = ss;
-//        studyService = new StudyService(userDao, courseDao);
     }
 
     @Override

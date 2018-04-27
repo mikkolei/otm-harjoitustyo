@@ -31,11 +31,11 @@ public class UserTest {
         assertFalse(u1.equals(u2));
     }
     
-    @Test
-    public void settingUsername() {
-        u.setUsername("username");
-        assertEquals("username", u.getUsername());
-    }
+//    @Test
+//    public void settingUsername() {
+//        u.setUsername("username");
+//        assertEquals("username", u.getUsername());
+//    }
     
     @Test
     public void getUsernameTest() {

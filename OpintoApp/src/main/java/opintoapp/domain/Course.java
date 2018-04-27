@@ -1,6 +1,10 @@
 
 package opintoapp.domain;
 
+/**
+ * Class to represent a single course
+ */
+
 import javafx.beans.property.SimpleStringProperty;
 
 public class Course {
