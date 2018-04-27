@@ -98,10 +98,6 @@ public class StudyServiceCourseTest {
         assertEquals(0, doneCourses.size());
         
     }
-
-    @After
-    public void tearDown() {
-    }
     
     private void createCourse(Course course) {
         studyService.createCourse(course);

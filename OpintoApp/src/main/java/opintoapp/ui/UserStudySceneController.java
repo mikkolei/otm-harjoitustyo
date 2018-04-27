@@ -1,10 +1,8 @@
-
 package opintoapp.ui;
 
 /**
  * Controller class for the user's personal study scene
  */
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -46,32 +44,35 @@ public class UserStudySceneController implements Initializable {
 
     @FXML
     private TableView<Course> tableView;
-    
+
     /**
      * Setting the main application
+     *
      * @param application Main application
      */
     public void setApplication(Main application) {
         this.application = application;
     }
-    
+
     /**
      * Setting the StudyService
+     *
      * @param studyService studyservice to be used
      */
     public void setStudyService(StudyService studyService) {
         this.studyService = studyService;
     }
-    
+
     /**
      * Method that sets the welcome message label
      */
     public void setLabel() {
         label.setText("Welcome " + this.studyService.getLoggedIn().getUsername());
     }
-    
+
     /**
      * Sets the unfinished courses of the user
+     *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
     public void setUndoneCourseList() throws SQLException {
@@ -79,9 +80,10 @@ public class UserStudySceneController implements Initializable {
         tableView.setItems(undoneCourses);
         showUndone = true;
     }
-    
+
     /**
      * Sets the finished courses of the user
+     *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
     public void setDoneCourseList() throws SQLException {
@@ -137,27 +139,31 @@ public class UserStudySceneController implements Initializable {
         if (showUndone && !tableView.getSelectionModel().isEmpty()) {
             Course c = tableView.getSelectionModel().getSelectedItem();
             setPopUpWindow(c);
-            
-            studyService.markDone(c.getId(), grade);
+            if (grade != -1) {
+                studyService.markDone(c.getId(), grade);
+            }
             setUndoneCourseList();
         }
     }
-    
+
     /**
      * Sets the needed features for the scene
+     *
      * @param url
-     * @param rb 
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         SpinnerValueFactory<Integer> creditsValues = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 5);
         credits.setValueFactory(creditsValues);
     }
-    
+
     /**
      * Creates the popup window for the course to be marked finished
+     *
      * @param c course that is going to be marked finished
-     * @throws IOException if creation of the popup window fails, throws IO Exception
+     * @throws IOException if creation of the popup window fails, throws IO
+     * Exception
      */
     public void setPopUpWindow(Course c) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PopUpScene.fxml"));
@@ -165,6 +171,7 @@ public class UserStudySceneController implements Initializable {
         PopUpSceneController popUpSceneController = loader.getController();
         popUpSceneController.display("Mark " + c.getName() + " done?", "Set grade", root1);
         grade = popUpSceneController.returnGradeValue();
+        
     }
 
 }

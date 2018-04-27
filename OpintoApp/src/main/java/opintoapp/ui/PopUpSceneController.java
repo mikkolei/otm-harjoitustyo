@@ -72,6 +72,7 @@ public class PopUpSceneController implements Initializable {
     
     @FXML
     private void handleCancelButton(ActionEvent event) {
+        gradeValue = -1;
         stage.close();
     }
     
