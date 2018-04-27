@@ -55,7 +55,21 @@ CREATE TABLE User (
    password varchar(50)
 );
 ```
-eli ensin syötetään nimi, sitten käyttäjänimi ja lopuksi salasana. Kaikki ovat varchar -muotoa ja pituudet on rajattu 50 merkkiin. Sovelluslogiikka määrittelee myös minimipituuden merkkijonoille.
+Ensin asetetaan yksilöivä id -tunnusluku tämän jälkeen nimi sitten käyttäjänimi ja lopuksi salasana. Id on sqlite3:n automaattisesti generoima id tunnus, joka toimii samalla myös luokan pääavaimena. Kaikki muut ovat varchar -muotoa ja pituudet on rajattu 50 merkkiin. Sovelluslogiikka määrittelee myös minimipituuden merkkijonoille.
+
+Tietokannan Course-taulu on tehty seuraavalla komennolla:
+```
+CREATE TABLE Course (
+   id integer PRIMARY KEY,
+   user_id integer,
+   name varchar(100),
+   credits integer,
+   done boolean,
+   grade integer,
+   FOREIGN KEY (user_id) REFERENCES User(id)
+);
+```
+Ensin asetetaan yksilöivä id -tunnusluku, sitten käyttäjään kohdistuva id -luku, kurssin nimi, kurssin opintopisteet, totuusarvo onko kurssi suoritettu, kurssin arvosana, ja lopuksi asetetaan viiteavaimen osoittaminen User-luokkaan.
 
 ### Päätoiminnallisuudet
 
