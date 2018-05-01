@@ -63,6 +63,9 @@ public class CreateNewUserSceneController {
             } else if (studyService.createUser(user)) {
                 text.setText("new user created");
                 text.setTextFill(Color.GREEN);
+                name.setText("");
+                username.setText("");
+                password.setText("");
             } else {
                 text.setText("username must be unique");
                 text.setTextFill(Color.RED);

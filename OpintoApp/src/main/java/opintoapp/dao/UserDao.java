@@ -15,6 +15,6 @@ public interface UserDao {
     
     User findById(int id) throws SQLException;
     
-    List<User> getAll();
+//    List<User> getAll() throws SQLException;
     
 }

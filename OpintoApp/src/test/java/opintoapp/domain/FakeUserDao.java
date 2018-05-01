@@ -39,10 +39,10 @@ public class FakeUserDao implements UserDao {
                 .findFirst().orElse(null);
     }
 
-    @Override
-    public List<User> getAll() {
-        return users;
-    }
+//    @Override
+//    public List<User> getAll() {
+//        return users;
+//    }
 
     @Override
     public User findById(int id) throws SQLException {

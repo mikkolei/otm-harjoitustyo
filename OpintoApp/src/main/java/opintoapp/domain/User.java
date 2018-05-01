@@ -58,9 +58,9 @@ public class User {
 //        this.password = password;
 //    }
     
-    public List<Course> getCourses(User user) {
-        return user.courses;
-    }
+//    public List<Course> getCourses(User user) {
+//        return user.courses;
+//    }
     
     public void addCourse(Course c) {
         courses.add(c);

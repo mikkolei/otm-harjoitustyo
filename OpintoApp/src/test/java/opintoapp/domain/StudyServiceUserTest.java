@@ -23,14 +23,6 @@ public class StudyServiceUserTest {
 //        
 //    }
     
-//    @BeforeClass
-//    public static void setUpClass() {
-//    }
-//    
-//    @AfterClass
-//    public static void tearDownClass() {
-//    }
-    
     @Before
     public void setUp() {
         this.fakeUserDao = new FakeUserDao();
@@ -38,10 +30,6 @@ public class StudyServiceUserTest {
         this.studyService = new StudyService(fakeUserDao, fakeCourseDao);
         
         
-    }
-    
-    @After
-    public void tearDown() {
     }
     
     @Test

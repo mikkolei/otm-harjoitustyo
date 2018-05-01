@@ -18,15 +18,14 @@ public class Course {
 
     public Course(int id, User user, String name, int credits, boolean done, int grade) {
         this.id = id;
+        this.user = user;
         this.name.set(name);
         this.credits = credits;
         this.done = done;
         this.grade = grade;
-        this.user = user;
     }
     
     public Course(User user, String name, int credits) {
-//        this.id = id;
         this.user = user;
         this.name.set(name);
         this.credits = credits;
@@ -51,7 +50,7 @@ public class Course {
     }
 
     public User getUser() {
-        return user;
+        return this.user;
     }
     
     public int getGrade() {

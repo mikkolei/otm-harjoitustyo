@@ -14,11 +14,9 @@ import opintoapp.domain.User;
 
 public class SQLUserDao implements UserDao {
 
-    private List<User> users;
     private Database db;
 
     public SQLUserDao(Database db) {
-        users = new ArrayList<>();
         this.db = db;
     }
 
@@ -37,7 +35,6 @@ public class SQLUserDao implements UserDao {
             stmt.executeUpdate();
             stmt.close();
             conn.close();
-            users.add(user);
             return user;
         } catch (SQLException e) {
 
@@ -103,9 +100,12 @@ public class SQLUserDao implements UserDao {
         return user;
     }
 
-    @Override
-    public List<User> getAll() {
-        return users;
-    }
+//    @Override
+//    public List<User> getAll() throws SQLException {
+//        Connection conn = db.getConnection();
+//        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM User;");
+//        
+//        return users;
+//    }
 
 }
