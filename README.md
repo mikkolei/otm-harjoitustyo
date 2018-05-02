@@ -13,6 +13,8 @@
 ## Releaset
 [Viikko 5 release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko5)
 
+[Viikko 6 release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko6)
+
 ## Komentorivitoiminnot
 
 ### Testaus
