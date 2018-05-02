@@ -15,4 +15,5 @@ päivä | aika | tehdyt asiat
 24.4.2018 | 3 | Jar generointi onnistuu, tableview toimintaan
 26.4.2018 | 2 | Kurssit voi merkitä tehdyiksi ja taulukot päivittyvät oikein
 27.4.2018 | 3 | Javadoc käyttöönotto, refaktorointia, testausta parannettu
-yht | 36 |
+2.5.2018 | 3 | Testausta, Javadoc, dokumentointia paranneltu, muutamia korjauksia toiminnallisuuksiin
+yht | 39 |
