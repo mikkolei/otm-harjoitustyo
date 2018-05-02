@@ -17,6 +17,7 @@ java -jar opintoapp.jar
 ## Kirjautuminen
 
 Sovellus käynnistyy kirjautumisnäkymään
+![login](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/loginNäkymä.png)
 
 Kirjautuminen onnistuu syöttämällä olemassa oleva käyttäjätunnus ja sen salasana syöttökenttiin ja painamalla "login" -nappia.
 Mikäli kirjautuminen epäonnistuu, ilmoittaa ohjelma siitä punaisella merkityllä virheviestillä
