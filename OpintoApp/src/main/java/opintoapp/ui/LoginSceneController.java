@@ -29,11 +29,19 @@ public class LoginSceneController {
 
     @FXML
     private Label text;
-
+    
+    /**
+     * Sets the Main application
+     * @param application Main application
+     */
     public void setApplication(Main application) {
         this.application = application;
     }
-
+    
+    /**
+     * Sets the used StudyService
+     * @param studyService studyService to be used
+     */
     public void setStudyService(StudyService studyService) {
         this.studyService = studyService;
     }

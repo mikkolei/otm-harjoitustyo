@@ -22,51 +22,60 @@ public class SQLCourseDaoTest {
 
     @Before
     public void setUp() throws Exception {
-        db = new Database("jdbc:sqlite:opintoAppFake.db");
+        db = new Database("jdbc:sqlite:opintoAppTest.db");
         udao = new SQLUserDao(db);
         cdao = new SQLCourseDao(db, udao);
         user = new User(1, "testName", "tester", "password");
+
         Connection conn = db.getConnection();
-        PreparedStatement stmt = conn.prepareStatement("INSERT INTO Course "
-                + "(user_id, name, credits, done)"
-                + "VALUES (?, ?, ?, ?)");
-        stmt.setInt(1, user.getId());
-        stmt.setString(2, "testCourse");
-        stmt.setInt(3, 5);
-        stmt.setBoolean(4, false);
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO User (name, username, password)"
+                + "VALUES (?, ?, ?);");
+        stmt.setString(1, "testName");
+        stmt.setString(2, "tester");
+        stmt.setString(3, "password");
         stmt.executeUpdate();
         stmt.close();
+        PreparedStatement stmt2 = conn.prepareStatement("INSERT INTO Course "
+                + "(user_id, name, credits, done)"
+                + "VALUES (?, ?, ?, ?)");
+        stmt2.setInt(1, user.getId());
+        stmt2.setString(2, "testCourse");
+        stmt2.setInt(3, 5);
+        stmt2.setBoolean(4, false);
+        stmt2.executeUpdate();
+        stmt2.close();
         conn.close();
     }
-    
-//    @Test
-//    public void createCourseWorks() throws SQLException {
-//        User user1 = new User(2, "name", "username", "pass");
-//        Course course = new Course(user1, "testing", 5);
-//        cdao.create(course);
-//        List<Course> courses = cdao.getAll(user1);
-////        for (Course c : courses) {
-////            System.out.println(c.getUser());
-////        }
-//        assertEquals(1, courses.size());
-//        assertEquals("testing", courses.get(0).getName());
-//        assertFalse(courses.get(0).isDone());
-//        assertEquals(1, courses.get(1).getUser().getId());
-//    }
-    
-//    @Test
-//    public void coursesCanBeSetDone() throws SQLException {
-//        Course course = new Course(3, user, "testing", 5, false, 0);
-//        cdao.setDone(3, 5);
-//        assertEquals(true, course.isDone());
-//    }
 
+    @Test
+    public void createCourseWorks() throws SQLException {
+        cdao.create(new Course(user, "testing", 5));
+        List<Course> courses = cdao.getAll(user);
+        assertEquals(2, courses.size());
+        assertEquals("testing", courses.get(1).getName());
+        assertFalse(courses.get(1).isDone());
+        assertEquals("tester", courses.get(1).getUser().getUsername());
+    }
+
+    @Test
+    public void coursesCanBeSetDone() throws SQLException {
+        List<Course> courses = cdao.getAll(user);
+        Course c = courses.get(0);
+        cdao.setDone(1, 5);
+//        course.setDone();
+//        course.setGrade(5);
+        assertEquals(true, c.isDone());
+    }
+    
     @After
     public void tearDown() throws SQLException {
         Connection conn = db.getConnection();
         PreparedStatement stmt = conn.prepareStatement("DROP TABLE Course;");
         stmt.executeUpdate();
         stmt.close();
+        PreparedStatement stmt2 = conn.prepareStatement("DROP TABLE User;");
+        stmt2.executeUpdate();
+        stmt2.close();
         conn.close();
     }
 

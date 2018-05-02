@@ -20,6 +20,10 @@ public class SQLCourseDao implements CourseDao {
 //        courses = new ArrayList<>();
         this.userDao = userDao;
     }
+    
+    public SQLCourseDao(Database db) {
+        this.db = db;
+    }
 
     @Override
     public Course create(Course course) throws SQLException {

@@ -30,6 +30,10 @@ public class Main extends Application {
         System.out.println("Hello world");
     }
     
+    /**
+     * Initialize method that sets controllers, scenes, database and DAOs
+     * @throws Exception 
+     */
     @Override
     public void init() throws Exception {
         this.db = new Database("jdbc:sqlite:opintoApp.db");
@@ -59,7 +63,11 @@ public class Main extends Application {
         userStudyScene = new Scene(studyPane);
     }
     
-
+    /**
+     * Sets the first stage and title and shows the application
+     * @param stage first stage
+     * @throws Exception 
+     */
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
@@ -68,16 +76,26 @@ public class Main extends Application {
         stage.show();
     }
     
+    /**
+     * Sets loginScene
+     */
     public void setLoginScene() {
         stage.setScene(loginScene);
     }
     
+    /**
+     * Sets UserStudyScene
+     * @throws SQLException 
+     */
     public void setUserStudyScene() throws SQLException {
         stage.setScene(userStudyScene);
         userStudySceneController.setLabel();
         userStudySceneController.setUndoneCourseList();
     }
     
+    /**
+     * Sets createNewUserScene
+     */
     public void setCreateNewUserScene() {
         stage.setScene(createNewUserScene);
     }

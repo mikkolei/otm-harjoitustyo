@@ -34,17 +34,26 @@ public class CreateNewUserSceneController {
 
     @FXML
     private Label text;
-
+    
+    /**
+     * Sets the Main application
+     * @param application Main application
+     */
     public void setApplication(Main application) {
         this.application = application;
     }
-
+    
+    /**
+     * Sets the used studyService
+     * @param studyService studyService to be used
+     */
     public void setStudyService(StudyService studyService) {
         this.studyService = studyService;
     }
 
     @FXML
     private void handleReturnButton(ActionEvent event) {
+        this.text.setText("");
         this.application.setLoginScene();
     }
 

@@ -71,7 +71,7 @@ public class UserStudySceneController implements Initializable {
     }
 
     /**
-     * Sets the unfinished courses of the user
+     * Sets the list to show unfinished courses of the user
      *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
@@ -82,7 +82,7 @@ public class UserStudySceneController implements Initializable {
     }
 
     /**
-     * Sets the finished courses of the user
+     * Sets the list to show finished courses of the user
      *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
@@ -95,8 +95,12 @@ public class UserStudySceneController implements Initializable {
     @FXML
     private void handleLogoutButton(ActionEvent event) {
         try {
+            if(!showUndone) {
+                tableView.getColumns().remove(gradeColumn);
+            } 
             this.studyService.logout();
-            this.application.setLoginScene();
+            this.application.setLoginScene(); 
+            
         } catch (Exception e) {
 
         }
