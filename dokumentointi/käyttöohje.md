@@ -37,7 +37,9 @@ Mikäli uuden käyttäjän luominen onnistuu, ilmoittaa ohjelma siitä vihreäll
 Onnistuneen kirjautumisen jälkeen siirrytään kirjautuneen käyttäjän omalle kurssisivulle. Kurssisivulla on näkyvissä valmiina käyttäjän keskeneräiset kurssit ja mahdollisuus luoda uusi kurssi.
 ![TyhjäNäkymä](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/TyhjäNäkymä.png)
 Vasemmassa reunassa olevilla syöttökentillä syötetään uudelle kurssille nimi ja sen opintopisteet. Opintopisteet on rajattu välille 0-30 ja oletusarvoisesti Spinnerissä näkyy luku 5.
+
 ![UudenKurssinLuominen](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/UudenKurssinLisäysOsaKuva.png)
+
 Painamalla nappia "Add new course" kurssi voidaan luoda näkyväksi listassa. Mikäli kurssin luonti onnistuu, niin ohjelma ilmoittaa siitä vihreällä merkityllä viestillä. Mikäli kurssin luonti epäonnistuu, niin ohjelma ilmoittaa siitä punaisella virheviestillä. Kurssin luonti voi epäonnistua, jos kurssin nimi on liian lyhyt tai liian pitkä. 
 Kurssin onnistuneen luonnin jälkeen päivittyy kurssi näkyväksi listaan.
 ![OnnistunutKurssinLuonti](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/OnnistunutKurssinLuontiNäkyyListassa.png)
