@@ -11,13 +11,11 @@ import opintoapp.domain.*;
 
 public class SQLCourseDao implements CourseDao {
     
-//    private List<Course> courses;
     private Database db;
     private UserDao userDao;
     
     public SQLCourseDao(Database db, UserDao userDao) {
         this.db = db;
-//        courses = new ArrayList<>();
         this.userDao = userDao;
     }
     
@@ -40,7 +38,6 @@ public class SQLCourseDao implements CourseDao {
             stmt.executeUpdate();
             stmt.close();
             conn.close();
-//            courses.add(course);
             return course;
         } catch (Exception e) {
             return null;

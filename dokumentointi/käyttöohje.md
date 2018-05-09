@@ -59,3 +59,6 @@ Käyttäjä voi valita kumpia kursseja listassa esitetään. Painamalla nappia "
 ![ListassaNäkyyValmisKurssi](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/ValmisKurssiNäkyyOikeassaListassa.png)
 
 
+## Sovelluksen sulkeminen
+
+Sovelluksesta voi poistua, kun käyttäjä ei ole enää kirjautuneena sovellukseen. Uloskirjautuminen tapahtuu "logout" -napin avulla.

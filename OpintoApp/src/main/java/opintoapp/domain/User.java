@@ -46,21 +46,10 @@ public class User {
         return password;
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
     
-//    public List<Course> getCourses(User user) {
-//        return user.courses;
-//    }
+    public List<Course> getCourses(User user) {
+        return user.courses;
+    }
     
     public void addCourse(Course c) {
         courses.add(c);

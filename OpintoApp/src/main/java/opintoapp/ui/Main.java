@@ -27,7 +27,6 @@ public class Main extends Application {
     
     public static void main(String[] args) {
         launch(args);
-        System.out.println("Hello world");
     }
     
     /**
@@ -74,6 +73,14 @@ public class Main extends Application {
         stage.setTitle("OpintoApp");
         setLoginScene();
         stage.show();
+        
+        stage.setOnCloseRequest(e-> {
+            System.out.println("closing");
+            System.out.println(studyService.getLoggedIn());
+            if (studyService.getLoggedIn() != null) {
+                e.consume();
+            }
+        });
     }
     
     /**

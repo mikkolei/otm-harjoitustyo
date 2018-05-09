@@ -16,4 +16,5 @@ päivä | aika | tehdyt asiat
 26.4.2018 | 2 | Kurssit voi merkitä tehdyiksi ja taulukot päivittyvät oikein
 27.4.2018 | 3 | Javadoc käyttöönotto, refaktorointia, testausta parannettu
 2.5.2018 | 3 | Testausta, Javadoc, dokumentointia paranneltu, muutamia korjauksia toiminnallisuuksiin
-yht | 39 |
+9.5.2018 | 2 | Pieniä muokkauksia, refaktorointia
+yht | 41 |

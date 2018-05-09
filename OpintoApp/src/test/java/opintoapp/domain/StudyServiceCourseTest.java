@@ -99,6 +99,17 @@ public class StudyServiceCourseTest {
         
     }
     
+    @Test
+    public void coursesCanBeSetDone() throws SQLException {
+        createCourse(new Course(user1, "OTM", 5));
+        Course courseToBeSetDone = new Course(4, user1, "course", 5, false, 0);
+        createCourse(courseToBeSetDone);
+        assertEquals(3, studyService.getUndoneCourses().size());
+        studyService.markDone(courseToBeSetDone.getId(), 5);
+//        assertEquals(2, studyService.getUndoneCourses().size());
+//        assertEquals(2, studyService.getDoneCourses().size());
+    }
+    
     private void createCourse(Course course) {
         studyService.createCourse(course);
     }

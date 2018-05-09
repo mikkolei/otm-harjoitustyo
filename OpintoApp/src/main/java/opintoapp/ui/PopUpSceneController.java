@@ -18,13 +18,10 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import opintoapp.domain.*;
 
 
 public class PopUpSceneController implements Initializable {
     
-    private StudyService studyService;
-    private Main application;
     private Stage stage;
     private int gradeValue;
     
