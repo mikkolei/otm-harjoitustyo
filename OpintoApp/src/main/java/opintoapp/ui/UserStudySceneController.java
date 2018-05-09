@@ -144,7 +144,7 @@ public class UserStudySceneController implements Initializable {
             Course c = tableView.getSelectionModel().getSelectedItem();
             setPopUpWindow(c);
             if (grade != -1) {
-                studyService.markDone(c.getId(), grade);
+                studyService.markDone(c, grade);
             }
             setUndoneCourseList();
         }

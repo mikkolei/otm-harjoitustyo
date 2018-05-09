@@ -39,14 +39,11 @@ public class FakeUserDao implements UserDao {
                 .findFirst().orElse(null);
     }
 
-//    @Override
-//    public List<User> getAll() {
-//        return users;
-//    }
-
     @Override
     public User findById(int id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return users.stream()
+                .filter(u -> u.getId() == id)
+                .findFirst().orElse(null);
     }
 
 }

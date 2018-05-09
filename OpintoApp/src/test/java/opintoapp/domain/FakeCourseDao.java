@@ -9,15 +9,14 @@ import opintoapp.dao.CourseDao;
 public class FakeCourseDao implements CourseDao {
     
     List<Course> courses;
-//    User user;
 
     public FakeCourseDao() {
-//        user = new User("tester", "tester", "test");
         courses = new ArrayList<>();
     }
 
     @Override
     public Course create(Course course) throws SQLException {
+        course.setId(courses.size() + 1);
         courses.add(course);
         return course;
     }

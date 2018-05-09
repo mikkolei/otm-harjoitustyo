@@ -78,12 +78,11 @@ public class StudyService {
      * @param grade the grade of the finished course 
      */
 
-    public void markDone(int id, int grade) {
-        try {
-            courseDao.setDone(id, grade);
-        } catch (Exception e) {
+    public void markDone(Course course, int grade) throws SQLException {
+        Course c = new Course(course.getId(), getLoggedIn(), course.getName(), course.getCredits(), false, grade);
+        
+        courseDao.setDone(c.getId(), grade);
 
-        }
     }
     
     /**
