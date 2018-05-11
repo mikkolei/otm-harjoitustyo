@@ -17,4 +17,5 @@ päivä | aika | tehdyt asiat
 27.4.2018 | 3 | Javadoc käyttöönotto, refaktorointia, testausta parannettu
 2.5.2018 | 3 | Testausta, Javadoc, dokumentointia paranneltu, muutamia korjauksia toiminnallisuuksiin
 9.5.2018 | 2 | Pieniä muokkauksia, refaktorointia
-yht | 41 |
+11.5.2018 | 5 | Refaktorointia, Javadoc ja muu dokumentointi viimeistelty, loppu release
+yht | 46 |
