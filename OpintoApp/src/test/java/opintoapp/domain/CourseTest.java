@@ -56,7 +56,7 @@ public class CourseTest {
     }
     
     @Test
-    public void getToStringTest() {
+    public void toStringTest() {
         assertEquals("OTM, 5", c1.toString());
         assertEquals("Tira, 10", c2.toString());
     }

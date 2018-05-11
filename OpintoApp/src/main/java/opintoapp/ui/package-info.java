@@ -1,4 +1,4 @@
 /**
- * Ui
+ * Ui package
  */
 package opintoapp.ui;

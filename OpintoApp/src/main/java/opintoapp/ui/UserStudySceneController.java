@@ -159,6 +159,7 @@ public class UserStudySceneController implements Initializable {
                 studyService.markDone(c, grade);
             }
             setUndoneCourseList();
+            setCreditsSum();
         }
     }
 
@@ -192,7 +193,7 @@ public class UserStudySceneController implements Initializable {
     /**
      * Sets the sum for all credits of the user's courses
      *
-     * @throws SQLException SQLException if operation fails
+     * @throws SQLException SQLException if the operation fails
      */
     public void setCreditsSum() throws SQLException {
         stats.clear();

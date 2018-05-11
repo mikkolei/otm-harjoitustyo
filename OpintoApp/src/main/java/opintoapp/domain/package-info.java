@@ -1,4 +1,4 @@
 /**
- * Application's logic
+ * Application's operational logic
  */
 package opintoapp.domain;
