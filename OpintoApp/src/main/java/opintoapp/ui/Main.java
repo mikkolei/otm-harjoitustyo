@@ -24,14 +24,17 @@ public class Main extends Application {
     private Stage stage;
     private UserStudySceneController userStudySceneController;
     
-    
+    /**
+     * Method to launch the application
+     * @param args args
+     */
     public static void main(String[] args) {
         launch(args);
     }
     
     /**
      * Initialize method that sets controllers, scenes, database and DAOs
-     * @throws Exception 
+     * @throws Exception Exception if initialization fails
      */
     @Override
     public void init() throws Exception {
@@ -65,7 +68,7 @@ public class Main extends Application {
     /**
      * Sets the first stage and title and shows the application
      * @param stage first stage
-     * @throws Exception 
+     * @throws Exception Exception
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -92,12 +95,13 @@ public class Main extends Application {
     
     /**
      * Sets UserStudyScene
-     * @throws SQLException 
+     * @throws SQLException Exception if setting the scene fails
      */
     public void setUserStudyScene() throws SQLException {
         stage.setScene(userStudyScene);
         userStudySceneController.setLabel();
         userStudySceneController.setUndoneCourseList();
+        userStudySceneController.setCreditsSum();
     }
     
     /**

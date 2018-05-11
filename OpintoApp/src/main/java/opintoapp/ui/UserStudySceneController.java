@@ -15,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import opintoapp.domain.*;
+import org.apache.commons.math3.stat.descriptive.*;
 
 /**
  * Controller class for the user's personal study scene
@@ -29,6 +30,8 @@ public class UserStudySceneController implements Initializable {
     private boolean showUndone;
     private int grade;
     private TableColumn gradeColumn;
+    private DescriptiveStatistics stats = new DescriptiveStatistics();
+    private Double sum;
 
     @FXML
     private Label label;
@@ -44,6 +47,9 @@ public class UserStudySceneController implements Initializable {
 
     @FXML
     private TableView<Course> tableView;
+    
+    @FXML
+    private Label sumLabel;
 
     /**
      * Setting the main application
@@ -99,6 +105,8 @@ public class UserStudySceneController implements Initializable {
             this.studyService.logout();
             this.application.setLoginScene(); 
             errorMessage.setText("");
+            stats.clear();
+            sumLabel.setText("");
         } catch (Exception e) {
 
         }
@@ -120,6 +128,7 @@ public class UserStudySceneController implements Initializable {
             errorMessage.setTextFill(Color.GREEN);
             courseName.setText("");
             setUndoneCourseList();
+            setCreditsSum();
         }
     }
 
@@ -152,8 +161,8 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the needed features for the scene
-     * @param url
-     * @param rb
+     * @param url URL
+     * @param rb ResourceBundle
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -173,7 +182,22 @@ public class UserStudySceneController implements Initializable {
         PopUpSceneController popUpSceneController = loader.getController();
         popUpSceneController.display("Mark " + c.getName() + " done?", "Set grade", root1);
         grade = popUpSceneController.returnGradeValue();
-        
+    }
+    
+    /**
+     * Sets the sum for all credits of the user's courses
+     * @throws SQLException SQLException if operation fails
+     */
+    public void setCreditsSum() throws SQLException {
+        stats.clear();
+        for (Course c : studyService.getUndoneCourses()) {
+            stats.addValue(c.getCredits());
+        }
+        for (Course c : studyService.getDoneCourses()) {
+            stats.addValue(c.getCredits());
+        }
+        sum = stats.getSum();
+        sumLabel.setText(sum + " cr");
     }
 
 }

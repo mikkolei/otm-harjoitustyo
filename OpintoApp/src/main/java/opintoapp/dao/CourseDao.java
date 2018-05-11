@@ -9,22 +9,21 @@ import opintoapp.domain.User;
 /**
  * Interface class for DAO implementation of Course class
  */
-
 public interface CourseDao {
     
     /**
      * Create new course
      * @param course course to be created
      * @return course that is created
-     * @throws SQLException 
+     * @throws SQLException Exception if the operation fails
      */
     Course create(Course course) throws SQLException;
     
     /**
      * Gets all courses of the user
      * @param user user whose courses are listed
-     * @return courses
-     * @throws SQLException 
+     * @return list of courses
+     * @throws SQLException Exception if the operation fails
      */
     List<Course> getAll(User user) throws SQLException;
     
@@ -32,7 +31,7 @@ public interface CourseDao {
      * Sets course as done
      * @param id id of the course
      * @param grade grade for the course
-     * @throws SQLException 
+     * @throws SQLException Exception if the operation fails
      */
     void setDone(int id, int grade) throws SQLException;
     

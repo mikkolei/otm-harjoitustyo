@@ -102,6 +102,8 @@ public class StudyServiceCourseTest {
         createCourse(courseToBeSetDone);
         
         assertEquals(2, studyService.getUndoneCourses().size());
+        assertEquals(1, studyService.getDoneCourses().size());
+        
         studyService.markDone(courseToBeSetDone, 5);
 
         assertEquals(1, studyService.getUndoneCourses().size());

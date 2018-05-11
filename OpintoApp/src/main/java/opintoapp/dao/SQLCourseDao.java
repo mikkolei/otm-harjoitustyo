@@ -12,14 +12,13 @@ import opintoapp.domain.*;
 /**
  * Class that implements CourseDao and is responsible of the SQL commands to Course class
  */
-
 public class SQLCourseDao implements CourseDao {
     
     private Database db;
     private UserDao userDao;
     
     /**
-     * 
+     * Constructor
      * @param db database to be used for saving information
      * @param userDao userDao to be used for finding correct user
      */
@@ -32,7 +31,7 @@ public class SQLCourseDao implements CourseDao {
      * Creates new course to the database
      * @param course Course to be created
      * @return Created course
-     * @throws SQLException 
+     * @throws SQLException SQLEXception if creation fails
      */
     @Override
     public Course create(Course course) throws SQLException {
@@ -59,7 +58,7 @@ public class SQLCourseDao implements CourseDao {
      * Gets all courses of the user from the database
      * @param user User whose courses are listed
      * @return List of courses
-     * @throws SQLException 
+     * @throws SQLException SQLException
      */
     @Override
     public List<Course> getAll(User user) throws SQLException {
@@ -83,7 +82,7 @@ public class SQLCourseDao implements CourseDao {
      * Marks course as done and sets grade
      * @param id Id of the course
      * @param grade Grade of the course
-     * @throws SQLException 
+     * @throws SQLException SQLException if the operation fails
      */
     @Override
     public void setDone(int id, int grade) throws SQLException {

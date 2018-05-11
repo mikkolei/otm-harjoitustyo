@@ -64,7 +64,7 @@
       </HBox>
       <HBox layoutY="370.0" prefHeight="29.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label>
+            <Label fx:id="sumLabel">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

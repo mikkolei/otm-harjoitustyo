@@ -14,7 +14,7 @@ public class SQLUserDao implements UserDao {
     private Database db;
     
     /**
-     * 
+     * Constructor
      * @param db database to be used for saving information
      */
     public SQLUserDao(Database db) {
@@ -25,7 +25,7 @@ public class SQLUserDao implements UserDao {
      * Creates new user to the database
      * @param user User to be created
      * @return Created user
-     * @throws Exception 
+     * @throws Exception Exception if operation fails
      */
     @Override
     public User create(User user) throws Exception {
@@ -52,9 +52,9 @@ public class SQLUserDao implements UserDao {
     /**
      * Finds user from the database by username and password
      * @param username Username
-     * @param password Password
-     * @return User
-     * @throws SQLException 
+     * @param password Password 
+     * @return Found user 
+     * @throws SQLException SQLException if the operation fails
      */
     @Override
     public User findByUsernameAndPassword(String username, String password) throws SQLException {
@@ -84,7 +84,7 @@ public class SQLUserDao implements UserDao {
      * Checks whether the username is already created or not
      * @param username Username
      * @return true if username is available, false if username is taken
-     * @throws SQLException 
+     * @throws SQLException SQLException if the operation fails
      */
     @Override
     public boolean checkUsernameAvailability(String username) throws SQLException {
@@ -106,8 +106,8 @@ public class SQLUserDao implements UserDao {
     /**
      * Finds user from the database by user id
      * @param id Id of the user
-     * @return User
-     * @throws SQLException 
+     * @return Found user
+     * @throws SQLException SQLException if the operation fails
      */
     @Override
     public User findById(int id) throws SQLException {

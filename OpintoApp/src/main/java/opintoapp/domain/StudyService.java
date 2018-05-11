@@ -77,7 +77,7 @@ public class StudyService {
      * Sets the course as finished
      * @param course Course to be marked done
      * @param grade the grade of the finished course
-     * @throws SQLException 
+     * @throws SQLException SQLException if the operation fails
      */
     public void markDone(Course course, int grade) throws SQLException {
         Course c = new Course(course.getId(), getLoggedIn(), course.getName(), course.getCredits(), false, grade);

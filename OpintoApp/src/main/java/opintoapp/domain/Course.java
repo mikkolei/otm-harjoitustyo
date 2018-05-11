@@ -6,7 +6,6 @@ import javafx.beans.property.SimpleStringProperty;
 /**
  * Class to represent a single course
  */
-
 public class Course {
     
     private int id;

@@ -73,8 +73,8 @@ public class PopUpSceneController implements Initializable {
     
     /**
      * Set the features for the scene
-     * @param url
-     * @param rb 
+     * @param url URL
+     * @param rb ResourceBundle
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
