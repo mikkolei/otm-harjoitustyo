@@ -26,7 +26,7 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli eli *normaali* käytt�
 * Käyttäjä voi valita näkymän kumpia kursseja taulukossa esitetään
   * Tekemättömät kurssit
   * Tehdyt kurssit
-  * Samalla vaihtuu myös sovelluksen alareunassa oleva yhteenlaskettu summa kurssin opintopisteistä
+  * Samalla vaihtuu myös sovelluksen alareunassa oleva yhteenlaskettu summa kurssien opintopisteistä
 * Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
