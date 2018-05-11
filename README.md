@@ -31,7 +31,7 @@ testikattavuus luodaan komennolla
 mvn jacoco:report
 ```
 Testikattavuutta voidaan tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
-### Suoritettavan jarin generointi
+### Suoritettavan .jar -tiedoston generointi
 komento
 ```
 mvn package
