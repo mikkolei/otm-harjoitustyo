@@ -1,9 +1,5 @@
 package opintoapp.ui;
 
-/**
- * Controller class for the login scene
- */
-
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import opintoapp.domain.StudyService;
 
+/**
+ * Controller class for the login scene
+ */
 public class LoginSceneController {
 
     private StudyService studyService;

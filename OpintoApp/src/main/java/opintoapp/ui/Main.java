@@ -1,10 +1,6 @@
 
 package opintoapp.ui;
 
-/**
- * Main class for the application
- */
-
 import java.sql.SQLException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -15,6 +11,9 @@ import javafx.stage.Stage;
 import opintoapp.dao.*;
 import opintoapp.domain.*;
 
+/**
+ * Main class for the application
+ */
 public class Main extends Application {
     
     private Database db;
@@ -24,6 +23,7 @@ public class Main extends Application {
     private Scene userStudyScene;
     private Stage stage;
     private UserStudySceneController userStudySceneController;
+    
     
     public static void main(String[] args) {
         launch(args);

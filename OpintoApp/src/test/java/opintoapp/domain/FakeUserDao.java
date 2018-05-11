@@ -33,10 +33,14 @@ public class FakeUserDao implements UserDao {
     }
 
     @Override
-    public User findByUsername(String username) throws SQLException {
-        return users.stream()
+    public boolean checkUsernameAvailability(String username) throws SQLException {
+        User user = users.stream()
                 .filter(u -> u.getUsername().equals(username))
                 .findFirst().orElse(null);
+        if (user != null) {
+            return false;
+        }
+        return true;
     }
 
     @Override

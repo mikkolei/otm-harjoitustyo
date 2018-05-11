@@ -46,7 +46,13 @@ public class SQLCourseDaoTest {
         stmt2.close();
         conn.close();
     }
-
+    
+    @Test
+    public void getAllCoursesWorks() throws SQLException {
+        List<Course> courses = cdao.getAll(user);
+        assertEquals(1, courses.size());
+    }
+    
     @Test
     public void createCourseWorks() throws SQLException {
         cdao.create(new Course(user, "testing", 5));
@@ -57,15 +63,16 @@ public class SQLCourseDaoTest {
         assertEquals("testertester", courses.get(1).getUser().getUsername());
     }
 
-//    @Test
-//    public void coursesCanBeSetDone() throws SQLException {
-//        List<Course> courses = cdao.getAll(user);
-//        Course c = courses.get(0);
-//        cdao.setDone(1, 5);
-//        c.setDone();
+    @Test
+    public void coursesCanBeSetDone() throws SQLException {
+        List<Course> courses = cdao.getAll(user);
+        Course c = cdao.create(new Course(2, user, "course", 5, false, 0));
+        System.out.println(c.getId());
+        cdao.setDone(c.getId(), 5);
+        System.out.println(c.getGrade());
 //        assertEquals(true, c.isDone());
-//        assertEquals(5, c.getGrade());
-//    }
+        assertEquals(5, c.getGrade());
+    }
     
     @After
     public void tearDown() throws SQLException {

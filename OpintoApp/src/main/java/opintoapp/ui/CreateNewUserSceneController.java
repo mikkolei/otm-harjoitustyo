@@ -1,9 +1,5 @@
 package opintoapp.ui;
 
-/**
- * Controller class for the create a new user scene
- */
-
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +10,9 @@ import opintoapp.domain.StudyService;
 import javafx.scene.paint.Color;
 import opintoapp.domain.User;
 
+/**
+ * Controller class for the create a new user scene
+ */
 public class CreateNewUserSceneController {
     
     private User user;

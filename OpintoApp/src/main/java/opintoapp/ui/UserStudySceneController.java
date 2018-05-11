@@ -1,8 +1,5 @@
 package opintoapp.ui;
 
-/**
- * Controller class for the user's personal study scene
- */
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -19,6 +16,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import opintoapp.domain.*;
 
+/**
+ * Controller class for the user's personal study scene
+ */
 public class UserStudySceneController implements Initializable {
 
     private StudyService studyService;
@@ -72,7 +72,6 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the list to show unfinished courses of the user
-     *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
     public void setUndoneCourseList() throws SQLException {
@@ -83,7 +82,6 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the list to show finished courses of the user
-     *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
     public void setDoneCourseList() throws SQLException {
@@ -152,7 +150,6 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the needed features for the scene
-     *
      * @param url
      * @param rb
      */
@@ -164,7 +161,6 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Creates the popup window for the course to be marked finished
-     *
      * @param c course that is going to be marked finished
      * @throws IOException if creation of the popup window fails, throws IO
      * Exception

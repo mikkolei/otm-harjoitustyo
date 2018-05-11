@@ -1,11 +1,11 @@
 
 package opintoapp.dao;
 
+import java.sql.*;
+
 /**
  * Class to establish the database for the system
  */
-
-import java.sql.*;
 
 public class Database {
     

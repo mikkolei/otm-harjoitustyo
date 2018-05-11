@@ -1,13 +1,12 @@
 
 package opintoapp.domain;
 
-/**
- * Class to represent the user of the system
- */
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class to represent the user of the system
+ */
 public class User {
     
     private int id;

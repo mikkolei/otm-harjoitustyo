@@ -1,10 +1,6 @@
 
 package opintoapp.ui;
 
-/**
- * Controller class for the mark done popup window
- */
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,7 +15,9 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-
+/**
+ * Controller class for the mark done popup window
+ */
 public class PopUpSceneController implements Initializable {
     
     private Stage stage;

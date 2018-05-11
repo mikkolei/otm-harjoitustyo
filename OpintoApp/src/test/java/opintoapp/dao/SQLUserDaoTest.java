@@ -43,12 +43,10 @@ public class SQLUserDaoTest {
     }
     
     @Test
-    public void findsUserByUsername() throws SQLException {
-        User user = userDao.findByUsername("tester");
+    public void checkUsernameAvailability() throws SQLException {
+        boolean check = userDao.checkUsernameAvailability("tester");
         
-        assertEquals("tester", user.getUsername());
-        assertEquals("testerName", user.getName());
-        assertEquals("password", user.getPassword());
+        assertFalse(check);
     }
     
     @Test
@@ -66,9 +64,9 @@ public class SQLUserDaoTest {
     }
     
     @Test
-    public void nonExistingUserIsFoundWithFindByUsername() throws SQLException {
-        User user = userDao.findByUsername("mikko");
-        assertEquals(null, user);
+    public void nonExistingUsernameCanBeAdded() throws SQLException {
+        boolean check = userDao.checkUsernameAvailability("mikko");
+        assertTrue(check);
     }
     
     @Test
