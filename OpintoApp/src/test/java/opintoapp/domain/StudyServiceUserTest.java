@@ -19,8 +19,6 @@ public class StudyServiceUserTest {
         this.fakeUserDao = new FakeUserDao();
         this.fakeCourseDao = new FakeCourseDao();
         this.studyService = new StudyService(fakeUserDao, fakeCourseDao);
-        
-        
     }
     
     @Test

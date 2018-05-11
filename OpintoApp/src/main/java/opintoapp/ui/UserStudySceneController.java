@@ -194,7 +194,7 @@ public class UserStudySceneController implements Initializable {
     }
 
     /**
-     * Sets the sum for all credits of the user's courses
+     * Sets the correct sum for all credits of the user's courses
      *
      * @throws SQLException SQLException if the operation fails
      */
