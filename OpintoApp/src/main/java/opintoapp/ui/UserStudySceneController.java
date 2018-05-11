@@ -98,7 +98,7 @@ public class UserStudySceneController implements Initializable {
             } 
             this.studyService.logout();
             this.application.setLoginScene(); 
-            
+            errorMessage.setText("");
         } catch (Exception e) {
 
         }
@@ -130,9 +130,11 @@ public class UserStudySceneController implements Initializable {
             gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
             tableView.getColumns().add(gradeColumn);
             setDoneCourseList();
+            errorMessage.setText("");
         } else {
             tableView.getColumns().remove(gradeColumn);
             setUndoneCourseList();
+            errorMessage.setText("");
         }
     }
 
