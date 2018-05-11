@@ -1,10 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto
-
-## Konfigurointi
-
-Tietokannan luominen
+Lataa tiedoston uusin release
 
 ## Ohjelman käynnistäminen
 
