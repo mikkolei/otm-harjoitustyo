@@ -129,6 +129,9 @@ public class UserStudySceneController implements Initializable {
             errorMessage.setText("New course created");
             errorMessage.setTextFill(Color.GREEN);
             courseName.setText("");
+            if (!showUndone) {
+                tableView.getColumns().remove(gradeColumn);
+            }
             setUndoneCourseList();
             setCreditsSum();
         }
