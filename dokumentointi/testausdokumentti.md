@@ -3,6 +3,9 @@
 Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti tehdyillä järjestelmätason testeillä.
 
 ## Yksikkö- ja integraatiotestaus
+Tärkeimmät testit on kohdistettu sovelluslogiikasta vastaavaan pakkaukseen [opintoapp.domainiin](https://github.com/mikkolei/otm-harjoitustyo/tree/master/OpintoApp/src/main/java/opintoapp/domain). Luokkia testaavat integraatiotestit [StudyServiceUserTest](https://github.com/mikkolei/otm-harjoitustyo/blob/master/OpintoApp/src/test/java/opintoapp/domain/StudyServiceUserTest.java) ja [StudyServiceCourseTest](https://github.com/mikkolei/otm-harjoitustyo/blob/master/OpintoApp/src/test/java/opintoapp/domain/StudyServiceCourseTest.java), joiden määrittelemät testitapaukset simuloivat käyttöliittymän [StudyService](https://github.com/mikkolei/otm-harjoitustyo/blob/master/OpintoApp/src/main/java/opintoapp/domain/StudyService.java) -luokan avulla suoritettuja toiminnallisuuksia.
+
+Integraatiotestit käyttävät datan pysyväistalletukseen DAO-rajapintojen keskusmuistitoteutusta [FakeUserDao:n](https://github.com/mikkolei/otm-harjoitustyo/blob/master/OpintoApp/src/test/java/opintoapp/domain/FakeUserDao.java) ja [FakeCourseDao:n](https://github.com/mikkolei/otm-harjoitustyo/blob/master/OpintoApp/src/test/java/opintoapp/domain/FakeCourseDao.java) muodossa.
 
 ### Sovelluslogiikka
 
