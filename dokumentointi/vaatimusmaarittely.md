@@ -26,12 +26,12 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli eli *normaali* käytt�
 * Käyttäjä voi valita näkymän kumpia kursseja taulukossa esitetään
   * Tekemättömät kurssit
   * Tehdyt kurssit
+  * Samalla vaihtuu myös sovelluksen alareunassa oleva yhteenlaskettu summa kurssin opintopisteistä
 * Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 Perusversion toteutuksen jälkeen järjestelmää saatetaan päivittää seuraavilla ominaisuuksilla
 * Suoritettujen kurssien arvosanojen painotettu keskiarvo
-* Kaikkien suoritettujen kurssien yhteenlaskettu opintopisteiden määrä
 * Kursseilla voi olla kuvaus tai aikataulutukseen liittyviä tietoja
 * Kurssin tietojen editoiminen
 * Kurssin suorittamisen ajoittaminen
