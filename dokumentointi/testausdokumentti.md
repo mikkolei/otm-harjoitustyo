@@ -14,9 +14,10 @@ Integraatiotestit käyttävät datan pysyväistalletukseen DAO-rajapintojen kesk
 Molempien DAO-luokkien toiminnallisuuksia on testattu luomalla testeissä testitietokanta *OpintoAppFake.db*. Tämä tietokanta luodaan projektin juureen ja tyhjennetään testien päätteeksi.
 
 ### Testauskattavuus
-Käyttöliittymää poislukien, sovelluksen testauksen rivikattavuus on % ja haarautumakattavuus on %.
+Käyttöliittymää poislukien, sovelluksen testauksen rivikattavuus on 94% ja haarautumakattavuus on 100%.
 
-Testauksen ulkopuolelle jäi tilanne, jossa SQLCourseDao:ssa olevan kurssin valmiiksi merkkaaminen onnistuu. 
+![Testauskattavuus](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/Testikattavuus.png)
+Testauksen ulkopuolelle jäi tilanne, jossa SQLCourseDao:ssa olevan kurssin valmiiksi merkkaaminen onnistuu, sekä tilanteet joista muodostuu SQLException. 
 
 ## Järjestelmätestaus
 Järjestelmätestaus on suoritettu manuaalisesti. Käyttökelpoisen jar- tiedoston suoritusta on testattu OSX-ympäristössä
