@@ -17,7 +17,7 @@ Molempien DAO-luokkien toiminnallisuuksia on testattu luomalla testeissä testit
 Käyttöliittymää poislukien, sovelluksen testauksen rivikattavuus on 94% ja haarautumakattavuus on 100%.
 
 ![Testauskattavuus](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/Testikattavuus.png)
-Testauksen ulkopuolelle jäi tilanne, jossa SQLCourseDao:ssa olevan kurssin valmiiksi merkkaaminen onnistuu, sekä tilanteet joista muodostuu SQLException. 
+Testauksen ulkopuolelle jäi tilanne, jossa SQLCourseDao:ssa olevan kurssin valmiiksi merkkaaminen onnistuu, sekä muutamat tilanteet joista epäonnistumisen yhteydessä muodostuu virheilmoitus. 
 
 ## Järjestelmätestaus
 Järjestelmätestaus on suoritettu manuaalisesti. Käyttökelpoisen jar- tiedoston suoritusta on testattu OSX-ympäristössä
