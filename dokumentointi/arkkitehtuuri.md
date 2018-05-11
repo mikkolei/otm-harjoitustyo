@@ -75,12 +75,15 @@ Ensin asetetaan yksilöivä id -tunnusluku, sitten käyttäjään kohdistuva id 
 
 #### Käyttäjän sisäänkirjautuminen
 
-![loginsekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/login.png)
+![LoginSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/login.png)
 
 #### Uuden käyttäjän luominen
 
+![CreateNewUserSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavioCreateNewUser.png)
 #### Uuden kurssin luominen käyttäjälle
 
-
+![CreateNewCourseSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavioCreateNewCourse.png)
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
+### DAO-luokat
+UserDao:on kohdistuvat SQL-kyselyt sisältävät melko paljon toisteista koodia. Yhden käyttäjän etsintä-operaatiot voitaisiin toteuttaa vähemmällä määrällä metodeja. Kaikilla etsintä-operaatioilla on kuitenkin erilainen ja oma merkityksensä tämän hetkisessä sovelluslogiikassa. 
