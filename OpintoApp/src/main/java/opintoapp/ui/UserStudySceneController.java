@@ -47,7 +47,7 @@ public class UserStudySceneController implements Initializable {
 
     @FXML
     private TableView<Course> tableView;
-    
+
     @FXML
     private Label sumLabel;
 
@@ -78,6 +78,7 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the list to show unfinished courses of the user
+     *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
     public void setUndoneCourseList() throws SQLException {
@@ -88,6 +89,7 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the list to show finished courses of the user
+     *
      * @throws SQLException if getting the courses fails, throws SQL Exception
      */
     public void setDoneCourseList() throws SQLException {
@@ -99,11 +101,11 @@ public class UserStudySceneController implements Initializable {
     @FXML
     private void handleLogoutButton(ActionEvent event) {
         try {
-            if(!showUndone) {
+            if (!showUndone) {
                 tableView.getColumns().remove(gradeColumn);
-            } 
+            }
             this.studyService.logout();
-            this.application.setLoginScene(); 
+            this.application.setLoginScene();
             errorMessage.setText("");
             stats.clear();
             sumLabel.setText("");
@@ -145,6 +147,7 @@ public class UserStudySceneController implements Initializable {
             setUndoneCourseList();
             errorMessage.setText("");
         }
+        setCreditsSum();
     }
 
     @FXML
@@ -161,6 +164,7 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Sets the needed features for the scene
+     *
      * @param url URL
      * @param rb ResourceBundle
      */
@@ -172,6 +176,7 @@ public class UserStudySceneController implements Initializable {
 
     /**
      * Creates the popup window for the course to be marked finished
+     *
      * @param c course that is going to be marked finished
      * @throws IOException if creation of the popup window fails, throws IO
      * Exception
@@ -183,18 +188,22 @@ public class UserStudySceneController implements Initializable {
         popUpSceneController.display("Mark " + c.getName() + " done?", "Set grade", root1);
         grade = popUpSceneController.returnGradeValue();
     }
-    
+
     /**
      * Sets the sum for all credits of the user's courses
+     *
      * @throws SQLException SQLException if operation fails
      */
     public void setCreditsSum() throws SQLException {
         stats.clear();
-        for (Course c : studyService.getUndoneCourses()) {
-            stats.addValue(c.getCredits());
-        }
-        for (Course c : studyService.getDoneCourses()) {
-            stats.addValue(c.getCredits());
+        if (showUndone) {
+            for (Course c : studyService.getUndoneCourses()) {
+                stats.addValue(c.getCredits());
+            }
+        } else {
+            for (Course c : studyService.getDoneCourses()) {
+                stats.addValue(c.getCredits());
+            }
         }
         sum = stats.getSum();
         sumLabel.setText(sum + " cr");
