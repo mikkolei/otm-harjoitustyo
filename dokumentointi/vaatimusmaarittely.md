@@ -19,19 +19,22 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli eli *normaali* käytt�
   * Kirjautuminen onnistuu syötettäessä olemassa oleva käyttäjätunnus oikean salasanan kanssa
 
 ### Kirjautumisen jälkeen
-* Käyttäjä näkee omat kurssit tai opinnot
+* Käyttäjä näkee omat kurssit
 * Käyttäjä voi lisätä uuden suoritettavan kurssin
   * Luotu kurssi näkyy vain sen luoneelle käyttäjällä
 * Käyttäjä voi merkitä kurssin suoritetuksi ja arvosanan, jonka on saanut kurssista
+* Käyttäjä voi valita näkymän kumpia kursseja taulukossa esitetään
+  * Tekemättömät kurssit
+  * Tehdyt kurssit
 * Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 Perusversion toteutuksen jälkeen järjestelmää saatetaan päivittää seuraavilla ominaisuuksilla
-* Käytyjen kurssien tarkastelu
-* Käymättömien kurssien tarkastelu
 * Suoritettujen kurssien arvosanojen painotettu keskiarvo
+* Kaikkien suoritettujen kurssien yhteenlaskettu opintopisteiden määrä
+* Kursseilla voi olla kuvaus tai aikataulutukseen liittyviä tietoja
 * Kurssin tietojen editoiminen
 * Kurssin suorittamisen ajoittaminen
 * Luodut kurssit näkyvät kaikille ja muut voivat valita muiden luomia kursseja
 * Käyttäjätunnuksen poistaminen
-* Kursseilla voi olla kuvaus tai aikataulutukseen liittyviä tietoja
+* Kurssit voidaan poistaa kokonaan näkyvistä
