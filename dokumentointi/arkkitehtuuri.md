@@ -96,7 +96,7 @@ Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createUser. Sovelluslogii
 
 #### Uuden kurssin luominen käyttäjälle
 Uuden kurssin luovan napin, "add new course", painalluksen jälkeen sovellus etenee seuraavanlaisesti:
-![CreateNewCourseSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavioCreateNewCourse.png)
+![CreateNewCourseSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssiCreateNewCourse.png)
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createCourse. Sovelluslogiikka luo uuden Course-olion ja tallettaa sen kutsumalla courseDao:n metodia create. Tämän seurauksena käyttöliittymä päivittää näkymän kutsumalla omaa metodia setUndoneCourseList().
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
