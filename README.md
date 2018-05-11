@@ -36,6 +36,7 @@ komento
 ```
 mvn package
 ```
+Generoi suoritettavan .jar tiedoston hakemistoon target
 
 ### Checkstyle
 Checkstylen määrittelemät tarkastukset saadaan komennolla
