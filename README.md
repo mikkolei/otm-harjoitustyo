@@ -10,10 +10,14 @@
 
 [Käyttöohje](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/käyttöohje.md)
 
+[Testausdokumentti](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/testausdokumentti.md)
+
 ## Releaset
 [Viikko 5 release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko5)
 
 [Viikko 6 release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/viikko6)
+
+[Loppupalautus](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/loppupalautus)
 
 ## Komentorivitoiminnot
 
