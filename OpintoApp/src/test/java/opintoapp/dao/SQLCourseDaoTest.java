@@ -7,9 +7,7 @@ import java.util.List;
 import opintoapp.domain.Course;
 import opintoapp.domain.User;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -61,17 +59,6 @@ public class SQLCourseDaoTest {
         assertEquals("testing", courses.get(1).getName());
         assertFalse(courses.get(1).isDone());
         assertEquals("testertester", courses.get(1).getUser().getUsername());
-    }
-
-    @Test
-    public void coursesCanBeSetDone() throws SQLException {
-        List<Course> courses = cdao.getAll(user);
-        Course c = cdao.create(new Course(2, user, "course", 5, false, 0));
-        System.out.println(c.getId());
-        cdao.setDone(c.getId(), 5);
-        System.out.println(c.getGrade());
-//        assertEquals(true, c.isDone());
-        assertEquals(5, c.getGrade());
     }
     
     @After

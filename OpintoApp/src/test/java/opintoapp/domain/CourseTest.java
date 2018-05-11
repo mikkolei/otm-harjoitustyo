@@ -1,10 +1,7 @@
 
 package opintoapp.domain;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -57,10 +54,6 @@ public class CourseTest {
         assertEquals(1, c1.getId());
         assertEquals(0, c2.getId());
     }
-    
-//    @After
-//    public void tearDown() {
-//    }
 
     
 }
