@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedoston uusin release
+Lataa tiedoston uusin [release](https://github.com/mikkolei/otm-harjoitustyo/releases/tag/loppupalautus)
 
 ## Ohjelman käynnistäminen
 
