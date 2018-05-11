@@ -92,11 +92,13 @@ Painikkeen painamiseen reagoiva tapahtumankäsittelijä kutsuu luokan StudyServi
 #### Uuden käyttäjän luominen
 Uuden käytäjän luonti tapauksessa, tarkistetaan ensin käyttäjätunnuksen saatavuus. Mikäli käyttäjätunnus ei ole jo käytössä, etenee sovellus seuraavanlaisesti "create new user" -napin painalluksen jälkeen: 
 ![CreateNewUserSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavioCreateNewUser.png)
+
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createUser. Sovelluslogiikka selvittää ensin onko käyttäjätunnus jo olemassa. Jos ei, on uuden käyttäjän luominen mahdollista, jolloin sovelluslogiikka luo uuden User-olion ja tallettaa sen kutsumulla userDao:n metodia create. Tästä seurauksena tulee ilmoitus onnistuneesta käyttäjän luomisesta ja käyttäjä voi palata kirjautumisnäkymään "return" -nappia painamalla. 
 
 #### Uuden kurssin luominen käyttäjälle
 Uuden kurssin luovan napin, "add new course", painalluksen jälkeen sovellus etenee seuraavanlaisesti:
 ![CreateNewCourseSekvenssikaavio](https://github.com/mikkolei/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssiCreateNewCourse.png)
+
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createCourse. Sovelluslogiikka luo uuden Course-olion ja tallettaa sen kutsumalla courseDao:n metodia create. Tämän seurauksena käyttöliittymä päivittää näkymän kutsumalla omaa metodia setUndoneCourseList().
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
