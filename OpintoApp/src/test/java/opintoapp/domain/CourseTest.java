@@ -54,6 +54,11 @@ public class CourseTest {
         assertEquals(1, c1.getId());
         assertEquals(0, c2.getId());
     }
-
+    
+    @Test
+    public void getToStringTest() {
+        assertEquals("OTM, 5", c1.toString());
+        assertEquals("Tira, 10", c2.toString());
+    }
     
 }

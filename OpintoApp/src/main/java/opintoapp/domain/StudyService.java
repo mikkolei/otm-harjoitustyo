@@ -37,7 +37,6 @@ public class StudyService {
             loggedIn.addCourse(c);
             return true;
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
             return false;
         }
         
